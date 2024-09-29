@@ -1,54 +1,54 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": {
-      "text": "GDP",
-      "anchor": "start",
-      "subtitle": "2015 USD | Source: JSB (WB) through ECO API",
-      "fontSize": 15,
-      "subtitleFontSize": 15,
-      "color": "#000000",
-      "subtitleColor": "#000000"
-    },
-    "height": 250,
-    "width": "container",
-    "autosize": {
-      "type": "fit",
-      "contains": "padding"
-    },
-    "background": "#ffffff",
-    "view": {
-      "fill": "#ffffff",
-      "strokeOpacity": 0
-    },
-    "data": {
-      "url": "https://api.economicsobservatory.com/jpn/gdpa?vega",
-      "format": {
-        "type": "json"
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "GDP",
+    "anchor": "start",
+    "subtitle": "2015 USD | Source: JSB (WB) through ECO API",
+    "fontSize": 15,
+    "subtitleFontSize": 15,
+    "color": "#000000",
+    "subtitleColor": "#000000"
+  },
+  "height": 250,  
+  "width": 600,  
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "background": "#ffffff",
+  "view": {
+    "fill": "#ffffff",
+    "strokeOpacity": 0
+  },
+  "data": {
+    "url": "https://api.economicsobservatory.com/jpn/gdpa?vega",
+    "format": {
+      "type": "json"
+    }
+  },
+  "mark": {
+    "type": "line",
+    "color": "#f4134d",
+    "strokeWidth": 2  
+  },
+  "encoding": {
+    "x": {
+      "field": "date",
+      "type": "temporal",
+      "axis": {
+        "title": "Year",
+        "titleColor": "#122B39",
+        "grid": false
       }
     },
-    "mark": {
-      "type": "line",
-      "color": "#f4134d",
-      "strokeWidth": 2
-    },
-    "encoding": {
-      "x": {
-        "field": "date",
-        "type": "temporal",
-        "axis": {
-          "title": "Year",
-          "titleColor": "#122B39",
-          "grid": false
-        }
-      },
-      "y": {
-        "field": "value",
-        "type": "quantitative",
-        "axis": {
-          "title": "GDP",
-          "titleColor": "#122B39",
-          "grid": false
-        }
+    "y": {
+      "field": "value",
+      "type": "quantitative",  
+      "axis": {
+        "title": "GDP",
+        "titleColor": "#122B39",
+        "grid": false
       }
     }
   }
+}
