@@ -43,7 +43,7 @@
       },
       "y": {
         "field": "value",
-        "type": "temporal",
+        "type": "quantitative",
         "axis": {
           "title": "GDP",
           "titleColor": "#122B39",
