@@ -51,9 +51,7 @@
         Your Name | <a href="https://www.linkedin.com/in/YOUR_LINKEDIN/">LinkedIn</a> | <a
             href="https://github.com/adamelzikry13">GitHub</a>
     </p>
-    <h3 class="small"> <!-- We have added a class to the header called "small" which we can use to style it in the CSS -->
-        This page acts as your portfolio of charts. You can use it as a good starting point to display your work but make sure to customise it to make it your own, or even start from scratch.  
-    </h3>
+
 
     <!-- We're organising the page into sections, with each section containing a chart, title and a description -->
     <section>
@@ -104,6 +102,35 @@
         
         <figure id="Location5"></figure>
     </section>
+
+    <section>
+        <div class="chart-description">
+            <h2>Week 2 Tasks</h2>
+          <h4>Argument:Countries that were colonised by the british empire performed better (GDP) than non colonised countries </h4>
+        
+        </div>
+        
+
+    </section>
+   
+    <section>
+        <div class="chart-container">
+            <figure id="Location6"></figure> 
+            <div class="chart-side-text">
+                <p>This chart supports the argument that the USA, once a British colony, is now one of the countries with a high GDP</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="chart-description">
+            <p>However, a counterargument can be made. Japan was never colonised and outperforms its peers on the Asian continent, such as India, which was colonised by the British</p>
+        </div>
+        
+        <figure id="Location7"></figure>
+    </section>
+    
+    
     <!-- Do you want to add more sections? -->
         <!-- Try copying pasting the section above -->
         <!-- You'll need to change the id of the figure "<figure id="Location3"... -->
@@ -116,15 +143,20 @@
 
         let figure_1_spec = "https://raw.githubusercontent.com/EconomicsObservatory/courses/main/2/s2_chart2.json"; // We're storing the URL of the graph we want to display in a variable
         let figure_2_spec = "https://raw.githubusercontent.com/RDeconomist/RDeconomist.github.io/refs/heads/main/charts/korea/agingPopulation.json"  
-        let figure_3_spec =  "https://raw.githubusercontent.com/RDeconomist/RDeconomist.github.io/refs/heads/main/charts/crypto/chartcrypto12.json"
+        let figure_3_spec = "https://raw.githubusercontent.com/RDeconomist/RDeconomist.github.io/refs/heads/main/charts/crypto/chartcrypto12.json"
         let figure_4_spec = "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/Japan%20GDP.json"
         let figure_5_spec = "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/Bangladesh_unemployment_rate.json"
-        
+        let figure_6_spec = "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/week3_support_chart_usa_gdp.json"
+        let figure_7_spec = "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/week3_refute_chart_japan_gdp.json"
+       
         vegaEmbed('#Location1', figure_1_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
         vegaEmbed('#Location2', figure_2_spec)
         vegaEmbed('#Location3', figure_3_spec)
         vegaEmbed('#Location4', figure_4_spec)
         vegaEmbed('#Location5', figure_5_spec)
+        vegaEmbed('#Location6', figure_6_spec)
+        vegaEmbed('#Location7', figure_7_spec)
+
 
         // Do you want to add more graphs?
         // try defining a new variable for figure_3_spec, adding VegaEmbed for Location3, and adding a new section in the HTML
