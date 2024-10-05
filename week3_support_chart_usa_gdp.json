@@ -45,7 +45,7 @@
         "field": "value",
         "type": "quantitative",
         "axis": {
-          "title": "GDP",
+          "title": "USA GDP",
           "titleColor": "#122B39",
           "grid": false
         }
