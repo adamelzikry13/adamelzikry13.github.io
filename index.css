@@ -65,3 +65,18 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+.chart-container {
+  display: flex;
+  align-items: center; /* Vertically align the chart and the text */
+}
+
+#Location6 {
+  flex: 1; /* This makes the chart take up available space */
+}
+
+.chart-side-text {
+  flex: 1; /* This makes the text take up available space next to the chart */
+  margin-left: 20px; /* Adds some space between the chart and the text */
+  font-size: 16px;
+}
