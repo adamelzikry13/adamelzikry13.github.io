@@ -3,7 +3,7 @@
     "description": "UK offences involving a knife",
     "title": {
       "text": "Knife offences in the UK",
-      "subtitle": "% of offences involving a knife or sharp instrument. Source: House Of Commons Library, CBP04304",
+      "subtitle": "Number of offences involving a knife or sharp instrument. Source: House Of Commons Library, CBP04304",
       "subtitleFontStyle": "italic",
       "subtitleFontSize": 10,
       "anchor": "start",
@@ -33,7 +33,7 @@
           "x": {
             "field": "Percentage of offences involving a knife or sharp instrument",
             "type": "quantitative",
-            "title": "Knife offences in (%)",
+            "title": "Knife offences in (Thousands)",
             "scale": {"domain": [0, 60]}
           }
         }
