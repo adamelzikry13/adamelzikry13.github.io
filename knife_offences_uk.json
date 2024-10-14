@@ -1,0 +1,67 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "UK offences involving a knife",
+    "title": {
+      "text": "Knife offences in the UK",
+      "subtitle": "% of offences involving a knife or sharp instrument. Source: House Of Commons Library, CBP04304",
+      "subtitleFontStyle": "italic",
+      "subtitleFontSize": 10,
+      "anchor": "start",
+      "color": "black"
+    },
+    "data": {
+      "url": "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/knife_attacks_uk.csv",
+      "format": {"type": "csv"}
+    },
+    "height": 350,
+    "width": 350,
+    "layer": [
+      {
+        "mark": {
+          "type": "bar",
+          "color": "darkorange",
+          "strokeWidth": 2,
+          "opacity": 1
+        },
+        "encoding": {
+          "y": {
+            "field": "Year",
+            "type": "ordinal",
+            "sort": [],
+            "title": "Year"
+          },
+          "x": {
+            "field": "Percentage of offences involving a knife or sharp instrument",
+            "type": "quantitative",
+            "title": "Knife offences in (%)",
+            "scale": {"domain": [0, 60]}
+          }
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "align": "left",
+          "dx": 3,
+          "dy": -2,
+          "color": "black"
+        },
+        "encoding": {
+          "y": {
+            "field": "Year",
+            "type": "ordinal",
+            "sort": []
+          },
+          "x": {
+            "field": "Percentage of offences involving a knife or sharp instrument",
+            "type": "quantitative"
+          },
+          "text": {
+            "field": "Percentage of offences involving a knife or sharp instrument",
+            "type": "quantitative",
+            "format": ".1f"
+          }
+        }
+      }
+    ]
+  }
