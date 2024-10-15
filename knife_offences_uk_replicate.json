@@ -1,73 +1,73 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "description": "Knife attacks in the UK over time",
-    "title": {
-      "text": "Selected offences involving a knife or sharp instrument",
-      "subtitle": "Year ending March, England and Wales, Including Greater Manchester and from year ending March 2020 excluding Devon and Cornwall (Thousands)",
-      "subtitleColor": "green",
-      "subtitleFontStyle": "italic",
-      "subtitleFontSize": 10,
-      "anchor": "start",
-      "color": "green"
-    },
-    "data": {
-      "url": "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/knife_attacks_uk.csv",
-      "format": {
-        "type": "csv"
-      }
-    },
-    "height": 300,
-    "width": 500,
-    "layer": [
-      {
-        "mark": {
-          "type": "bar",
-          "color": "green",
-          "strokeWidth": 2,
-          "opacity": 1
-        },
-        "encoding": {
-          "x": {
-            "field": "Year",
-            "type": "ordinal",
-            "title": "",
-            "axis": {
-              "labelAngle": 0,
-              "labelExpr": "substring(datum.value, 0, 4) % 2 === 0 ? datum.value : ''"
-            }
-          },
-          "y": {
-            "field": "Percentage of offences involving a knife or sharp instrument",
-            "type": "quantitative",
-            "title": ""
-          }
-        }
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Knife attacks in the UK over time",
+  "title": {
+    "text": "Selected offences involving a knife or sharp instrument",
+    "subtitle": "Year ending March, England and Wales, Including Greater Manchester and from year ending March 2020 excluding Devon and Cornwall (Thousands)",
+    "subtitleColor": "green",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "green"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/knife_attacks_uk.csv",
+    "format": {
+      "type": "csv"
+    }
+  },
+  "height": 300,
+  "width": 500,
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "color": "green",
+        "strokeWidth": 2,
+        "opacity": 1
       },
-      {
-        "mark": {
-          "type": "text",
-          "align": "center",  
-          "baseline": "middle",  
-          "color": "white",  
-          "dx": 0, 
-          "dy": 90   
-        },
-        "encoding": {
-          "x": {
-            "field": "Year",
-            "type": "ordinal"
-          },
-          "y": {
-            "field": "Percentage of offences involving a knife or sharp instrument",
-            "type": "quantitative"
-          },
-          "text": {
-            "field": "Percentage of offences involving a knife or sharp instrument",
-            "type": "quantitative",
-            "format": ".1f"  
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "ordinal",
+          "title": "",
+          "axis": {
+            "labelAngle": 0,
+            "labelExpr": "substring(datum.value, 0, 4) % 2 === 0 ? datum.value : ''"
           }
+        },
+        "y": {
+          "field": "Percentage of offences involving a knife or sharp instrument",
+          "type": "quantitative",
+          "title": ""
         }
       }
-    ]
-  }
-  
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",  
+        "baseline": "middle",  
+        "color": "white",  
+        "dx": 0, 
+        "dy": 90   
+      },
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "Percentage of offences involving a knife or sharp instrument",
+          "type": "quantitative",
+          "axis": null
+        },
+        "text": {
+          "field": "Percentage of offences involving a knife or sharp instrument",
+          "type": "quantitative",
+          "format": ".1f"  
+        }
+      }
+    }
+  ]
+}
