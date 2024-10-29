@@ -3,7 +3,7 @@
     "description": "UK offences involving a knife",
       "title": {
         "text": "UEFA Champions League",
-        "subtitle": "Total count of Runners-up and titles by nation. Source: Wikipedia",
+        "subtitle": "Total count of runners-up and titles by nation. Source: Wikipedia",
         "subtitleFontStyle": "italic",
         "subtitleFontSize": 10,
         "anchor": "start",
