@@ -1,0 +1,30 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/week5_CL_titles.csv"
+    },
+    "transform": [
+      {"fold": ["Titles", "Runners-up"], "as": ["Category", "Count"]}
+    ],
+    "mark": "bar",
+    "encoding": {
+      "y": {
+        "field": "Nation",
+        "type": "ordinal",
+        "sort": "-x",
+        "axis": {"title": "Nation"}
+      },
+      "x": {
+        "field": "Count",
+        "type": "quantitative",
+        "axis": {"title": "Count"}
+      },
+      "color": {
+        "field": "Category",
+        "type": "nominal",
+        "scale": {"range": ["#4c78a8", "#f58518"]},
+        "legend": {"title": "Category"}
+      }
+    }
+  }
+  
