@@ -1,5 +1,14 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "UK offences involving a knife",
+      "title": {
+        "text": "UEFA Champions League",
+        "subtitle": "Total count of Runners-up and titles by nation. Source: Wikipedia",
+        "subtitleFontStyle": "italic",
+        "subtitleFontSize": 10,
+        "anchor": "start",
+        "color": "black"
+      },
     "data": {
       "url": "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/week5_CL_titles.csv"
     },
