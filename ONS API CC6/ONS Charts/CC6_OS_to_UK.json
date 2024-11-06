@@ -1,0 +1,35 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+      "text": "OS Visits To UK",
+      "anchor": "start",
+      "subtitle": "OS visits to UK :Earnings: £ Millions | Source: ONS",
+      "fontSize": 14,
+      "subtitleFontSize": 12,
+      "color": "#000000",
+      "subtitleColor": "#000000"
+    },
+    "data": {
+      "url": "https://eco-cors-proxy.netlify.app/proxy?url=https://economicsobservatory.github.io/api/ons.html?code=gmaz&format=json&data_only=true",
+      "format": {
+        "type": "json",
+        "property": "months"
+      }
+    },
+    "mark": {
+      "type": "line",
+      "color": "royalblue"  
+    },
+    "encoding": {
+      "x": {
+        "field": "date",
+        "type": "temporal"
+      },
+      "y": {
+        "field": "value",
+        "type": "quantitative"
+      }
+    }
+  }
+  
+  
