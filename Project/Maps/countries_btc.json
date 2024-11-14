@@ -1,0 +1,48 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 750,
+    "height": 550,
+    "data": {
+      "url": "https://raw.githubusercontent.com/clinia/metabase-maps-geodata/refs/heads/master/country/worldHigh.json",
+      "format": {"property": "features"}
+    },
+    "projection": {"type": "mercator"},
+    "transform": [
+      {
+        "lookup": "properties.name",
+        "from": {
+          "data": {
+            "url": "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/Project/Maps/countries_and_government_fixed.csv",
+            "format": {"type": "csv"}
+          },
+          "key": "Entity",
+          "fields": ["# of BTC"]
+        },
+        "default": 0,
+        "as": "btc_holdings"
+      },
+      {
+        "calculate": "datum.btc_holdings === null ? 0 : datum.btc_holdings",
+        "as": "btc_value"
+      }
+    ],
+    "mark": {"type": "geoshape", "stroke": "white"},
+    "encoding": {
+      "color": {
+        "field": "btc_value",
+        "type": "quantitative",
+        "title": "Number of BTC Seized/Holds",
+        "scale": {
+          "domain": [0, 1, 10000, 100000, 200000],
+          "range": ["gray", "#e7d4e8", "#af8dc3", "#762a83", "#40004b"]
+        }
+      },
+      "tooltip": [
+        {"field": "properties.name", "type": "nominal", "title": "Country"},
+        {"field": "btc_value", "type": "quantitative", "title": "Number of BTC", "format": ",.0f"}
+      ]
+    },
+    "config": {
+      "view": {"stroke": null}
+    }
+  }
