@@ -1,0 +1,125 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Bitcoin Market Capitalization Over Time",
+    "subtitle": "Includes major events and milestones in Bitcoin history | Source: coinmarketcap.com",
+    "fontSize": 16,
+    "subtitleFontSize": 10,
+    "subtitleFontStyle": "italic",
+    "anchor": "start"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/Project/CSV/btc-usd-max.csv",
+    "format": {"type": "csv"}
+  },
+  "params": [
+    {
+      "name": "minYear",
+      "value": 2010,
+      "bind": {
+        "input": "range",
+        "min": 2010,
+        "max": 2024,
+        "step": 1,
+        "name": "Start year: "
+      }
+    },
+    {
+      "name": "maxYear",
+      "value": 2024,
+      "bind": {
+        "input": "range",
+        "min": 2010,
+        "max": 2024,
+        "step": 1,
+        "name": "End year: "
+      }
+    }
+  ],
+  "transform": [ 
+    {
+      "filter": "(year(datum.snapped_at) >= minYear) && (year(datum.snapped_at) <= maxYear)"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {"type": "area", "color": "green", "opacity": 0.3},
+      "encoding": {
+        "x": {
+          "field": "snapped_at",
+          "type": "temporal",
+          "title": "Date"
+        },
+        "y": {
+          "field": "market_cap",
+          "type": "quantitative",
+          "title": "Market Cap",
+          "scale": {"zero": true},
+          "axis": {
+            "format": "s"  // Use SI notation for large numbers (e.g., M, B, T)
+          }
+        },
+        "tooltip": [
+          {"field": "snapped_at", "type": "temporal", "title": "Date", "format": "%b %d, %Y"},
+          {"field": "market_cap", "type": "quantitative", "title": "Market Cap", "format": ",.0f"}
+        ]
+      }
+    },
+    {
+      "mark": {"type": "line", "color": "green"},
+      "encoding": {
+        "x": {
+          "field": "snapped_at",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "market_cap",
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {"field": "snapped_at", "type": "temporal", "title": "Date", "format": "%b %d, %Y"},
+          {"field": "market_cap", "type": "quantitative", "title": "Market Cap", "format": ",.0f"}
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"snapped_at": "2012-11-28", "event": "First Bitcoin halving", "market_cap": 1000000000},
+          {"snapped_at": "2014-02-07", "event": "Mt. Gox suspends Bitcoin withdrawals", "market_cap": 2000000000},
+          {"snapped_at": "2016-06-17", "event": "The DAO gets hacked", "market_cap": 3000000000},
+          {"snapped_at": "2016-07-09", "event": "Second Bitcoin halving", "market_cap": 4000000000},
+          {"snapped_at": "2017-08-01", "event": "Bitcoin Cash hard fork", "market_cap": 5000000000},
+          {"snapped_at": "2020-05-11", "event": "Third Bitcoin halving", "market_cap": 6000000000},
+          {"snapped_at": "2020-10-21", "event": "PayPal announces crypto support", "market_cap": 7000000000},
+          {"snapped_at": "2021-02-08", "event": "Tesla invests in Bitcoin", "market_cap": 8000000000},
+          {"snapped_at": "2021-09-15", "event": "Ethereum transitions to PoS", "market_cap": 9000000000},
+          {"snapped_at": "2022-05-09", "event": "UST stablecoin loses peg", "market_cap": 10000000000},
+          {"snapped_at": "2022-11-08", "event": "FTX halts withdrawals", "market_cap": 11000000000},
+          {"snapped_at": "2024-01-01", "event": "Spot Bitcoin ETFs approved", "market_cap": 12000000000},
+          {"snapped_at": "2024-04-19", "event": "Fourth Bitcoin halving", "market_cap": 13000000000}
+        ]
+      },
+      "layer": [
+        {
+          "mark": {
+            "type": "point",
+            "color": "red",
+            "size": 50,
+            "shape": "circle"
+          },
+          "encoding": {
+            "x": {"field": "snapped_at", "type": "temporal"},
+            "y": {"field": "market_cap", "type": "quantitative"},
+            "tooltip": [
+              {"field": "event", "type": "nominal", "title": "Event"},
+              {"field": "market_cap", "type": "quantitative", "title": "Market Cap", "format": ",.0f"}
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "width": 600,
+  "height": 350
+}

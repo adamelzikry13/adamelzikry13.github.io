@@ -1,0 +1,68 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Line chart with toggle buttons for BTC, ETH, and XAU prices, and dynamic y-axis scaling.",
+    "title": {
+      "text": "Price Differences of Crypto Against Traditional Assets",
+      "subtitle": "A comparison of BTC, ETH, XAU, and USD/EUR prices | Source: invsesting.com",
+      "subtitleFontSize": 10,
+      "subtitleFontStyle": "italic",
+      "fontSize": 16,
+      "anchor": "start",
+      "font": "Arial"
+    },
+    "data": {
+      "url": "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/Project/CSV/cleaned_price_difference_no_commas_v2.csv",
+      "format": {"type": "csv"}
+    },
+    "transform": [
+      {
+        "fold": ["btcprice", "ethprice", "xauprice", "usdeurprice"],
+        "as": ["PriceType", "Price"]
+      },
+      {
+        "calculate": "datum.PriceType == 'btcprice' ? 'BTC Price' : datum.PriceType == 'ethprice' ? 'ETH Price' : datum.PriceType == 'xauprice' ? 'XAU Price' : 'USD/EUR Price'",
+        "as": "AssetLabel"
+      },
+      {
+        "filter": "(datum.PriceType == 'btcprice' && toggleBTC) || (datum.PriceType == 'ethprice' && toggleETH) || (datum.PriceType == 'xauprice' && toggleXAU) || (datum.PriceType == 'usdeurprice')"
+      }
+    ],
+    "mark": "line",
+    "encoding": {
+      "x": {"field": "Date", "type": "temporal", "axis": {"title": "Date"}},
+      "y": {"field": "Price", "type": "quantitative", "axis": {"title": "Price (USD)"}},
+      "color": {
+        "field": "AssetLabel",
+        "type": "nominal",
+        "scale": {
+          "domain": ["BTC Price", "ETH Price", "XAU Price", "USD/EUR Price"],
+          "range": ["blue", "green", "gold", "purple"]
+        },
+        "title": "Asset"
+      },
+      "tooltip": [
+        {"field": "AssetLabel", "type": "nominal", "title": "Asset"},
+        {"field": "Price", "type": "quantitative", "title": "Price (USD)"}
+      ]
+    },
+    "width": 550,
+    "height": 300,
+    "params": [
+      {
+        "name": "toggleBTC",
+        "value": true,
+        "bind": {"input": "checkbox", "name": "Show BTC Price"}
+      },
+      {
+        "name": "toggleETH",
+        "value": true,
+        "bind": {"input": "checkbox", "name": "Show ETH Price"}
+      },
+      {
+        "name": "toggleXAU",
+        "value": true,
+        "bind": {"input": "checkbox", "name": "Show XAU Price"}
+      }
+    ]
+  }
+  
