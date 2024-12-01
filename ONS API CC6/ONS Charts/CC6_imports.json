@@ -13,7 +13,7 @@
       "url": "https://eco-cors-proxy.netlify.app/proxy?url=https://economicsobservatory.github.io/api/ons.html?code=ikbi&format=json&data_only=true",
       "format": {
         "type": "json",
-        "property": "months"
+        "property": "years"
       }
     },
     "mark": {
