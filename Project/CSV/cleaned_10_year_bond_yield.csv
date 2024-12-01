@@ -1,11 +1,11 @@
-Year,Yield in (%)
-2014,2.54
-2015,2.14
-2016,1.84
-2017,2.33
-2018,2.91
-2019,2.14
-2020,0.89
-2021,1.44
-2022,2.95
-2023,3.96
+Asset,Year,Yield in (%)
+US 10 Year Bonds,2014,2.54
+US 10 Year Bonds,2015,2.14
+US 10 Year Bonds,2016,1.84
+US 10 Year Bonds,2017,2.33
+US 10 Year Bonds,2018,2.91
+US 10 Year Bonds,2019,2.14
+US 10 Year Bonds,2020,0.89
+US 10 Year Bonds,2021,1.44
+US 10 Year Bonds,2022,2.95
+US 10 Year Bonds,2023,3.96
