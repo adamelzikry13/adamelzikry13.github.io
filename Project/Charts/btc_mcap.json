@@ -18,7 +18,7 @@
       "value": 2010,
       "bind": {
         "input": "range",
-        "min": 2010,
+        "min": 2013,
         "max": 2024,
         "step": 1,
         "name": "Start year: "
@@ -29,14 +29,14 @@
       "value": 2024,
       "bind": {
         "input": "range",
-        "min": 2010,
+        "min": 2013,
         "max": 2024,
         "step": 1,
         "name": "End year: "
       }
     }
   ],
-  "transform": [ 
+  "transform": [
     {
       "filter": "(year(datum.snapped_at) >= minYear) && (year(datum.snapped_at) <= maxYear)"
     }
@@ -56,7 +56,7 @@
           "title": "Market Cap",
           "scale": {"zero": true},
           "axis": {
-            "format": "s"  
+            "format": "s"
           }
         },
         "tooltip": [
@@ -113,7 +113,7 @@
             "y": {"field": "market_cap", "type": "quantitative"},
             "tooltip": [
               {"field": "event", "type": "nominal", "title": "Event"},
-              {"field": "market_cap", "type": "quantitative", "title": "Market Cap", "format": ",.0f"}
+              {"field": "snapped_at", "type": "temporal", "title": "Date", "format": "%b %d, %Y"}
             ]
           }
         }
