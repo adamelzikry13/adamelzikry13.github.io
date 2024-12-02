@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html> 
     
@@ -12,17 +10,20 @@
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-
+    
     <style>
         #chartGrid {
             display: flex;
         }
         
     </style>
+
+    
 </head>
 
 <body> 
 
+    <!-- FOR Pychart/plotly: Try adding the chart to its own page with nothing but the figure then add it to this page with an <iframe> - google Iframes/ask ChatGPT/Come to an office hour -->
     <h1 class="big" style="margin-bottom: 0px;"> 
         
         Adam El
@@ -156,8 +157,23 @@
         }
     </style>
 
+    <section>
+        <h2>CC7 Tasks</h2>
+        <figure id="Location20"></figure>
+        <p>The choropleth map above shows the total violent crime by state in the United States, with darker colors indicating higher crime rates.</p>
+    </section>
 
-    <!-- This is a script, it's a way to run JavaScript code on the page -->
+    <section>
+        <h2>CC8 Tasks</h2>
+        <figure id="Location21"></figure>
+    </section>
+
+    <section>
+        <figure id="Location22"></figure>
+    </section>
+
+
+
     <script>
 
         let figure_1_spec = "https://raw.githubusercontent.com/EconomicsObservatory/courses/main/2/s2_chart2.json"; 
@@ -179,6 +195,9 @@
         let figure_17_spec = "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/ONS%20API%20CC6/ONS%20Charts/CC6_net_investment.json"
         let figure_18_spec = "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/ONS%20API%20CC6/ONS%20Charts/CC6_employment_rate.json"
         let figure_19_spec = "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/ONS%20API%20CC6/ONS%20Charts/CC6_unemployment_rate.json"
+        let figure_20_spec = "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/Maps/CC7/us_violent_crime_map.json"
+        let figure_21_spec = "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/Project/Charts/inflation_against_btcreserves.json"
+        let figure_22_spec = "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/Project/Charts/Risk-Return.json"
 
         
         
@@ -201,15 +220,9 @@
         vegaEmbed('#Location17', figure_17_spec)
         vegaEmbed('#Location18', figure_18_spec)
         vegaEmbed('#Location19', figure_19_spec)
-
-
-
-        // Do you want to add more graphs?
-        // try defining a new variable for figure_3_spec, adding VegaEmbed for Location3, and adding a new section in the HTML
-        // e.g. 
-        // let figure_3_spec = ...
-        // vegaEmbed('#Location3', figure_3_spec)
-
+        vegaEmbed('#Location20', figure_20_spec)
+        vegaEmbed('#Location21', figure_21_spec)
+        vegaEmbed('#Location22', figure_22_spec)
 
     </script>
 
