@@ -1,0 +1,181 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Risk-Return",
+  "hconcat": [
+    {
+      "title": {
+        "text": "BTC",
+        "subtitle": "Risk-Return of BTC | Source: Statmuse, Bitbo",
+        "fontSize": 16,
+        "subtitleFontSize": 10,
+        "subtitleFontStyle": "italic",
+        "anchor": "start"
+      },
+      "data": {
+        "url": "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/Project/CSV/combined_btc_gold_bond_data.csv",
+        "format": {"type": "csv"}
+      },
+      "transform": [
+        {"filter": "datum['Asset_x'] == 'BTC'"}
+      ],
+      "layer": [
+        {
+          "mark": {"type": "line", "color": "red", "opacity": 0.6},
+          "transform": [
+            {"regression": "% RETURN", "on": "Average 30-Day BTC/USD Volatility"}
+          ],
+          "encoding": {
+            "x": {"field": "Average 30-Day BTC/USD Volatility", "type": "quantitative"},
+            "y": {"field": "% RETURN", "type": "quantitative"}
+          }
+        },
+        {
+          "mark": {
+            "type": "circle",
+            "opacity": 0.6
+          },
+          "encoding": {
+            "x": {
+              "field": "Average 30-Day BTC/USD Volatility",
+              "type": "quantitative",
+              "title": "Volatility Rate"
+            },
+            "y": {
+              "field": "% RETURN",
+              "type": "quantitative",
+              "title": "Yearly Returns (%)"
+            },
+            "color": {
+              "field": "YEAR",
+              "type": "ordinal",
+              "title": "Year",
+              "scale": {"scheme": "tableau10"}
+            },
+            "tooltip": [
+              {"field": "YEAR", "type": "ordinal", "title": "Year"},
+              {"field": "Average 30-Day BTC/USD Volatility", "type": "quantitative", "title": "Risk (Volatility)"},
+              {"field": "% RETURN", "type": "quantitative", "title": "Yearly Return (%)"}
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "text": "Gold",
+        "subtitle": "Risk-Return of Gold | Source: FRED, upmyinterest",
+        "fontSize": 16,
+        "subtitleFontSize": 10,
+        "subtitleFontStyle": "italic",
+        "anchor": "start"
+      },
+      "data": {
+        "url": "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/Project/CSV/combined_btc_gold_bond_data.csv",
+        "format": {"type": "csv"}
+      },
+      "transform": [
+        {"filter": "datum['Asset_y'] == 'Gold'"}
+      ],
+      "layer": [
+        {
+          "mark": {"type": "line", "color": "red", "opacity": 0.6},
+          "transform": [
+            {"regression": "Gold Return", "on": "Gold Volatility Rate"}
+          ],
+          "encoding": {
+            "x": {"field": "Gold Volatility Rate", "type": "quantitative"},
+            "y": {"field": "Gold Return", "type": "quantitative"}
+          }
+        },
+        {
+          "mark": {
+            "type": "circle",
+            "opacity": 0.6
+          },
+          "encoding": {
+            "x": {
+              "field": "Gold Volatility Rate",
+              "type": "quantitative",
+              "title": "Volatility Rate"
+            },
+            "y": {
+              "field": "Gold Return",
+              "type": "quantitative",
+              "title": "Yearly Returns (%)"
+            },
+            "color": {
+              "field": "YEAR",
+              "type": "ordinal",
+              "title": "Year",
+              "scale": {"scheme": "tableau10"}
+            },
+            "tooltip": [
+              {"field": "YEAR", "type": "ordinal", "title": "Year"},
+              {"field": "Gold Volatility Rate", "type": "quantitative", "title": "Risk (Volatility)"},
+              {"field": "Gold Return", "type": "quantitative", "title": "Yearly Return (%)"}
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "text": "US 10 Year Bond",
+        "subtitle": "Risk-Return of Bonds | Source: FRED, Statista",
+        "fontSize": 16,
+        "subtitleFontSize": 10,
+        "subtitleFontStyle": "italic",
+        "anchor": "start"
+      },
+      "data": {
+        "url": "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/Project/CSV/combined_btc_gold_bond_data.csv",
+        "format": {"type": "csv"}
+      },
+      "transform": [
+        {"filter": "datum['Asset'] == 'US 10 Year Bonds'"}
+      ],
+      "layer": [
+        {
+          "mark": {"type": "line", "color": "red", "opacity": 0.6},
+          "transform": [
+            {"regression": "Yield in (%)", "on": "Average Yearly Volatility"}
+          ],
+          "encoding": {
+            "x": {"field": "Average Yearly Volatility", "type": "quantitative"},
+            "y": {"field": "Yield in (%)", "type": "quantitative"}
+          }
+        },
+        {
+          "mark": {
+            "type": "circle",
+            "opacity": 0.6
+          },
+          "encoding": {
+            "x": {
+              "field": "Average Yearly Volatility",
+              "type": "quantitative",
+              "title": "Volatility Rate"
+            },
+            "y": {
+              "field": "Yield in (%)",
+              "type": "quantitative",
+              "title": "Yearly Return (%)"
+            },
+            "color": {
+              "field": "YEAR",
+              "type": "ordinal",
+              "title": "Year",
+              "scale": {"scheme": "tableau10"}
+            },
+            "tooltip": [
+              {"field": "YEAR", "type": "ordinal", "title": "Year"},
+              {"field": "Average Yearly Volatility", "type": "quantitative", "title": "Risk (Volatility)"},
+              {"field": "Yield in (%)", "type": "quantitative", "title": "Yearly Return (%)"}
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "spacing": 5
+}

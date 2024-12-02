@@ -56,7 +56,7 @@
           "title": "Market Cap",
           "scale": {"zero": true},
           "axis": {
-            "format": "s"  // Use SI notation for large numbers (e.g., M, B, T)
+            "format": "s"  
           }
         },
         "tooltip": [
