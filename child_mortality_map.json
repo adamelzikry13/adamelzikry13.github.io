@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 550,
+  "width": 500,
   "height": 400,
   "background": "#112240",
   "title": {
@@ -47,7 +47,7 @@
     },
     "tooltip": [
       {"field": "properties.name", "type": "nominal", "title": "Country"},
-      {"field": "Under-five mortality rate", "type": "quantitative", "title": "Under-five Mortality Rate"},
+      {"field": "Under-five mortality rate", "type": "quantitative", "title": "Mortality Rate"},
       {"field": "NumericYear", "type": "quantitative", "title": "Year"}
     ]
   },
