@@ -1,37 +1,44 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 600,
-    "height": 400,
-    "data": {
-      "url": "https://raw.githubusercontent.com/clinia/metabase-maps-geodata/refs/heads/master/country/usaHigh.json",
-      "format": {"type": "json", "property": "features"}
-    },
-    "projection": {"type": "mercator"},
-    "transform": [
-      {
-        "lookup": "properties.name",
-        "from": {
-          "data": {
-            "url": "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/main/Maps/CC7/crime-rate-by-state-2024.csv",
-            "format": {"type": "csv"}
-          },
-          "key": "state",
-          "fields": ["CrimeViolent"]
-        }
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 400,
+  "height": 400,
+  "title": {
+  "text": "Violent Crime Rates",
+  "subtitle": "Violent Crime Rates in the US by State | Source: worldpopulationreview ",
+  "anchor": "start",
+  "fontSize": 16,
+  "subtitleFontSize": 10,
+  "subtitleFontStyle": "italic"
+},
+  "data": {
+    "url": "https://raw.githubusercontent.com/clinia/metabase-maps-geodata/refs/heads/master/country/usaHigh.json",
+    "format": {"type": "json", "property": "features"}
+  },
+  "projection": {"type": "mercator"},
+  "transform": [
+    {
+      "lookup": "properties.name",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/main/Maps/CC7/crime-rate-by-state-2024.csv",
+          "format": {"type": "csv"}
+        },
+        "key": "state",
+        "fields": ["CrimeViolent"]
       }
-    ],
-    "mark": {"type": "geoshape", "stroke": "white"},
-    "encoding": {
-      "color": {
-        "field": "CrimeViolent",
-        "type": "quantitative",
-        "title": "Total Violent Crime",
-        "scale": {"scheme": "yelloworangered"}
-      },
-      "tooltip": [
-        {"field": "properties.name", "type": "nominal", "title": "State"},
-        {"field": "CrimeViolent", "type": "quantitative", "title": "Violent Crime Rate"}
-      ]
     }
+  ],
+  "mark": {"type": "geoshape", "stroke": "grey"},
+  "encoding": {
+    "color": {
+      "field": "CrimeViolent",
+      "type": "quantitative",
+      "title": "Total Violent Crime",
+      "scale": {"scheme": "yelloworangered"}
+    },
+    "tooltip": [
+      {"field": "properties.name", "type": "nominal", "title": "State"},
+      {"field": "CrimeViolent", "type": "quantitative", "title": "Violent Crime Rate"}
+    ]
   }
-  
+}
