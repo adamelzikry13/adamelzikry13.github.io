@@ -1,0 +1,59 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 600,
+  "height": 400,
+  "title": {
+    "text": "Under-five mortality rate",
+    "subtitle": "Mortality rate for children under five | Source: ourworldindata",
+    "anchor": "start",
+    "fontSize": 16,
+    "subtitleFontSize": 10,
+    "subtitleFontStyle": "italic"
+  },
+  "data": {
+          "url": "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/child-mortality.csv"
+        },
+  "transform": [
+    {
+      "lookup": "Entity",
+      "from": {
+        "data": {
+    "url": "https://raw.githubusercontent.com/clinia/metabase-maps-geodata/refs/heads/master/country/worldHigh.json",
+    "format": {"property": "features"}
+  },
+  
+        "key": "properties.name",
+        "fields": ["type", "properties", "geometry"]
+      }
+    },
+    {
+      "calculate": "toNumber(datum.Year)",
+      "as": "NumericYear"
+    },{
+      "filter": "datum.NumericYear == year"
+    }
+    
+  ],
+  "projection": {"type": "mercator"},
+  "mark": {"type": "geoshape", "stroke": "grey", "strokeWidth": 0.5},
+  "encoding": {
+    "color": {
+      "field": "Under-five mortality rate",
+      "type": "quantitative",
+      "title": "Under-five Mortality Rate",
+      "scale": {"scheme": "reds", "domainMax": 20, "domainMin": 0}
+    },
+    "tooltip": [
+      {"field": "properties.name", "type": "nominal", "title": "Country"},
+      {"field": "Under-five mortality rate", "type": "quantitative", "title": "Under-five Mortality Rate"},
+      {"field": "NumericYear", "type": "quantitative", "title": "Year"}
+    ]
+  },
+  "params": [
+    {
+      "name": "year",
+      "value": 1980,
+      "bind": {"input": "range", "min": 1980, "max": 2020, "step": 1}
+    }
+  ]
+} 
