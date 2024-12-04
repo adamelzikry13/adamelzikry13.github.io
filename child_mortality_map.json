@@ -42,7 +42,7 @@
     "color": {
       "field": "Under-five mortality rate",
       "type": "quantitative",
-      "title": "Under-five Mortality Rate",
+      "title": "Mortality Rate",
       "scale": {"scheme": "reds", "domainMax": 20, "domainMin": 0}
     },
     "tooltip": [
