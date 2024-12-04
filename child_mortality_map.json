@@ -2,27 +2,28 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 500,
   "height": 400,
-  "background": "whitesmoke",
+  "background": "#112240",
   "title": {
     "text": "Under-five mortality rate",
     "subtitle": "Mortality rate for children under five | Source: ourworldindata",
     "anchor": "start",
     "fontSize": 16,
+    "color": "#64ffda",
     "subtitleFontSize": 10,
-    "subtitleFontStyle": "italic"
+    "subtitleFontStyle": "Italic",
+    "subtitleColor": "#64ffda"
   },
   "data": {
-          "url": "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/child-mortality.csv"
-        },
+    "url": "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/child-mortality.csv"
+  },
   "transform": [
     {
       "lookup": "Entity",
       "from": {
         "data": {
-    "url": "https://raw.githubusercontent.com/clinia/metabase-maps-geodata/refs/heads/master/country/worldHigh.json",
-    "format": {"property": "features"}
-  },
-  
+          "url": "https://raw.githubusercontent.com/clinia/metabase-maps-geodata/refs/heads/master/country/worldHigh.json",
+          "format": {"property": "features"}
+        },
         "key": "properties.name",
         "fields": ["type", "properties", "geometry"]
       }
@@ -30,10 +31,10 @@
     {
       "calculate": "toNumber(datum.Year)",
       "as": "NumericYear"
-    },{
+    },
+    {
       "filter": "datum.NumericYear == year"
     }
-    
   ],
   "projection": {"type": "mercator"},
   "mark": {"type": "geoshape", "stroke": "grey", "strokeWidth": 0.5},
@@ -56,5 +57,15 @@
       "value": 1980,
       "bind": {"input": "range", "min": 1980, "max": 2020, "step": 1}
     }
-  ]
-} 
+  ],
+  "config": {
+    "legend": {
+      "titleFont": "Inter",
+      "titleFontSize": 14,
+      "titleColor": "#64ffda",  
+      "labelFont": "Inter",
+      "labelFontSize": 12,
+      "labelColor": "#64ffda"  
+    }
+  }
+}
