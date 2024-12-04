@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adam El - Final Year Project</title>
+    <link rel="stylesheet" href="finalyearproject.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Back Home</a></li>
+                <li><a href="#aim">Aim</a></li>
+                <li><a href="#data">Data</a></li>
+                <li><a href="#challenges">Analytical Challenges & Colab Notebooks</a></li>
+                <li><a href="#conclusion">Conclusion</a></li>
+            </ul>
+        </nav>
+    </header>
+   
+    <main>
+        <section id="aim" class="section aim">
+            <h1>Final Year Project</h1>
+            <p>If you are a person who is currently or planning to work in the finance sector, you would probably have heard of the guy who recorded a YouTube video asking you to buy $1 worth of BTC in 2013. When the video was released BTC was worth $129, and fast forward 11 years later, BTC is about to break $100,000.In the span of a decade, Cryptocurrencies like Bitcoin or Ethereum have become more relevant and widely adopted. Traditionally, Countries have kept traditional assets such as gold, foreign currencies such as USD or EUR, bonds, or even silver as their reserves in order to stabilize their economies and reduce financial crises.
+                A fascinating question, though, is raised by the emergence of decentralized digital currencies: should countries include cryptocurrencies in their official reserves? 
+                Cryptocurrencies present a number of difficulties, such as price volatility, regulatory uncertainty, and environmental concerns, even though they also promise high returns, diversification, and inflation protection.</p> 
+            <p>Through the consideration of important factors including global competitiveness, risk management, and economic stability, the aim of this project is to seek and assess the viability and usefulness of adding cryptocurrencies to national reserves. In an increasingly digitalized global economy, it aims to investigate how cryptocurrencies could improve financial diversity, act as an inflation hedge, and offer a competitive edge. The study will, however, also look into possible drawbacks, including as market volatility, cybersecurity risks, and the absence of global regulatory frameworks.</p>
+            <p>Through the examination of financial data, economic observations, or data from nations that have experimented with digital assets, this study seeks to provide policymakers practical insights. Eventually, the initiative hopes to assist countries in determining if adding bitcoin to their reserves may make them more financially resilient or expose them to an asset that is highly volatile and is not suitable to be part of their reserves.</p>
+    
+        </section>
+
+        <section id="data" class="section data">
+            <h1>Data</h1>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>How widely adopted is cryptocurrency?</h3>
+                    <a href="#" class="btn" onclick="showChart(event, 'Location1', figure_1_spec)">View Crypto Adoption Map</a>
+                    
+                    <div id="Location1Container">
+                        <figure id="Location1"></figure>
+                        <p id="Location1Text">Cryptocurrencies such as BTC were called a fad and hated by big investment banks and investment companies. Now, the same banks and companies even provide Spot ETFs for BTC and other cryptocurrencies. The map above shows how the adoption of cryptocurrency has increased as time goes on. 
+                            Starting in 2019, only a few countries had a crypto adoption higher than 10%, particularly countries from Latin America and Developing Nations had a higher crypto adoption rate compares to first world countries such as the US or UK. 
+                            All of this changed in 2023, where most of the countries have now widely adopted crypto. Thus, we can conclude from this that there is a clear trend of increasing cryptocurrency adoption globally as time progresses. This suggests that cryptocurrencies are becoming more mainstream, with countries adapting to crypto at varying speeds depending on economic, technological, and policy factors.
+                        </p>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <section id="data" class="section data">
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>BTC growth as a global asset</h3>
+                    <a href="#" class="btn" onclick="showChart(event, 'Location2', figure_2_spec)">View BTC Market Cap Chart</a>
+                    
+                    <div id="Location2Container">
+                        <figure id="Location2"></figure>
+                        <p id="Location2Text">Cryptocurrencies such as BTC were called a fad and hated by big investment banks and investment companies. Now, the same banks and companies even provide Spot ETFs for BTC and other cryptocurrencies. The map above shows how the adoption of cryptocurrency has increased as time goes on. 
+                            Starting in 2019, only a few countries had a crypto adoption higher than 10%, particularly countries from Latin America and Developing Nations had a higher crypto adoption rate compares to first world countries such as the US or UK. 
+                            All of this changed in 2023, where most of the countries have now widely adopted crypto. Thus, we can conclude from this that there is a clear trend of increasing cryptocurrency adoption globally as time progresses. This suggests that cryptocurrencies are becoming more mainstream, with countries adapting to crypto at varying speeds depending on economic, technological, and policy factors.
+                        </p>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+    
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+   </main>
+         <!-- Scripts -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+
+
+    <script>
+        
+        let figure_1_spec = "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/Project/Maps/crypto_adoption.json"
+        let figure_2_spec = "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/Project/Charts/btc_mcap.json"
+
+        function showChart(event, locationId, chartSpec) {
+    event.preventDefault(); 
+
+    const container = document.getElementById(`${locationId}Container`);
+    const figureElement = document.getElementById(locationId);
+    const textElement = document.getElementById(`${locationId}Text`);
+
+    if (figureElement.classList.contains("chart-loaded")) {
+        figureElement.innerHTML = ""; 
+        container.style.display = "none"; 
+        figureElement.classList.remove("chart-loaded");
+    } else {
+        vegaEmbed(`#${locationId}`, chartSpec);
+        container.style.display = "block"; 
+        figureElement.classList.add("chart-loaded");
+    }
+}
+
+     function toggleImageWithText(event, containerId, imagePath, textId, textContent) {
+    event.preventDefault();
+
+    const container = document.getElementById(containerId);
+    const textElement = document.getElementById(textId);
+
+    if (container.classList.contains("image-loaded")) {
+        container.innerHTML = ""; 
+        container.classList.remove("image-loaded");
+        textElement.textContent = ""; 
+        textElement.classList.remove("visible");
+        textElement.classList.add("hidden");
+    } else {
+        container.innerHTML = `<img src="${imagePath}" alt="Dynamic Chart" class="dynamic-image">`;
+        container.classList.add("image-loaded");
+        textElement.textContent = textContent; 
+        textElement.classList.remove("hidden");
+        textElement.classList.add("visible");
+    }
+}
+
+
+
+function showChart(event, locationId, chartSpec) {
+    event.preventDefault();
+
+    const container = document.getElementById(`${locationId}Container`);
+    const figureElement = document.getElementById(locationId);
+
+    if (figureElement.classList.contains("chart-loaded")) {
+        figureElement.innerHTML = ""; 
+        container.style.display = "none"; 
+        figureElement.classList.remove("chart-loaded");
+    } else {
+        vegaEmbed(`#${locationId}`, chartSpec); 
+        container.style.display = "block"; 
+        figureElement.classList.add("chart-loaded");
+    }
+}
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

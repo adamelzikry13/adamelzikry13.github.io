@@ -1,183 +1,260 @@
 <!DOCTYPE html>
-<html> 
-    
-<head>    
-    
-    <link rel="stylesheet" type="text/css" href="index.css">
-    <title>My portfolio</title> 
+<html lang="en">
 
-   
-  
-    
-    <style>
-        #chartGrid {
-            display: flex;
-        }
-        
-    </style>
-
-    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adam El - Portfolio</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 
-<body> 
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#" data-target="about">About</a></li>
+                <li><a href="#" data-target="projects">Tasks</a></li>
+                <li><a href="#" data-target="contact">Contact</a></li>
+                <li><a href="finalyearproject.html">Final Year Project</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- FOR Pychart/plotly: Try adding the chart to its own page with nothing but the figure then add it to this page with an <iframe> - google Iframes/ask ChatGPT/Come to an office hour -->
-    <h1 class="big" style="margin-bottom: 0px;"> 
-        
-        Adam El
-    </h1>
-    <p style="margin-top: 0px; color: darkblue">
-        Your Name | <a href="https://www.linkedin.com/in/YOUR_LINKEDIN/">LinkedIn</a> | <a
-            href="https://github.com/adamelzikry13">GitHub</a>
-    </p>
+    <main>
+        <section id="about" class="section about">
+            <h1>Adam El</h1>
+            <p>Welcome to my portfolio! I am currently a penultimate-year student at the University of Bristol, pursuing a BSc in Economics and Econometrics.
+                 I have a strong passion for finance, economics, and, in particular, cryptocurrency. Over the past four years, I have immersed myself in the crypto space, starting at the height of the NFT boom.</p>
+            <p>My journey in crypto and NFTs has been transformative, allowing me to connect with individuals from diverse backgrounds and forge meaningful global relationships. 
+                This experience has deepened my understanding of the industry and its potential to shape the future of finance and technology.</p>
+        </section>
 
-    <section>
-        <div class="chart-description">
-            <h2>CC1 Tasks</h2>
-            <p>Aging population in Korea chart</p>
-        
-        </div>
-        <figure id="Location2"></figure> 
+        <section id="projects" class="section projects">
+            <h2>Tasks</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>CC1</h3>
+                    <p>Hosting and displaying charts on my site</p>
+                    <a href="#" class="btn" onclick="showChart(event, 'Location2', figure_2_spec)">View Chart 1</a>
+                    <a href="#" class="btn" onclick="showChart(event, 'Location3', figure_3_spec)">View Chart 2</a>
+                    <div id="Location2Container">
+                        <figure id="Location2"></figure>
+                    </div>
+                    <div id="Location3Container">
+                        <figure id="Location3"></figure>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <h3>CC2</h3>
+                    <p>Building and creating my own visualizations</p>
+                    <a href="#" class="btn" onclick="showChart(event,'Location4', figure_4_spec)">View Chart 1</a>
+                    <a href="#" class="btn" onclick="showChart(event,'Location5', figure_5_spec)">View Chart 2</a>
+                    <div id="Location4Container">
+                        <figure id="Location4"></figure>
+                    </div>
+                    <div id="Location5Container">
+                        <figure id="Location5"></figure>
+                    </div>
+                </div>
 
-    </section>
-
-    <section>
-        <div class="chart-description">
-            <p>Dogecoin trading range chart</p>
-        
-        </div>
-        
-        <figure id="Location3"></figure>
-    </section>
- 
-    <section>
-        <div class="chart-description">
-            <h2>CC2 Tasks</h2>
-            <p>Japan's economic miracle</p>
-        
-        </div>
-        <figure id="Location4"></figure> 
-
-    </section>
-
-    <section>
-        <div class="chart-description">
-            <p>Bangladesh's unemployment rate</p>
-        
-        </div>
-        
-        <figure id="Location5"></figure>
-    </section>
-
-    <section>
-        <div class="chart-description">
-            <h2>CC3 Tasks</h2>
-          <h4>Argument:Countries that were colonised by the british empire performed better (GDP) than non colonised countries </h4>
-        
-        </div>
-        
-
-    </section>
-   
-    <section>
-        <div class="chart-container">
-            <figure id="Location6"></figure> 
-            <div class="chart-side-text">
-                <p>This chart supports the argument that the USA, once a British colony, is now one of the countries with a high GDP</p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section>
-        <div class="chart-description">
-            <p>However, a counterargument can be made. Japan was never colonised and outperforms its peers on the Asian continent, such as India, which was colonised by the British</p>
-        </div>
+        <section id="projects" class="section projects">
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>CC3</h3>
+                    <p>Argument: Countries that were colonised by the British Empire performed better (GDP) than non-colonised countries</p>
+                    <div class="button-group">
+                        <a href="#" class="btn" onclick="showChart(event, 'Location6', figure_6_spec)">View Support Chart</a>
+                        <a href="#" class="btn" onclick="showChart(event, 'Location7', figure_7_spec)">View Refute Chart</a>
+                    </div>
+                    <div id="Location6Container">
+                        <figure id="Location6"></figure>
+                        <p id="Location6Text">This chart supports the argument that the USA, once a British colony, is now one of the countries with a high GDP.</p>
+                    </div>
+                    <div id="Location7Container">
+                        <figure id="Location7"></figure>
+                        <p id="Location7Text">However, a counterargument can be made. Japan was never colonised and outperforms its peers on the Asian continent, such as India, which was colonised by the British</p>
+                    </div>
+                </div>
+        </section>
+
+        <section id="projects" class="section projects">
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>CC4</h3>
+                    <p>Replicating, Recreating and Reimproving</p>
+                    <div class="button-group">
+                        <a href="#" class="btn" onclick="toggleImageWithText(event, 'knifeChartContainer', 'img/knife_offences_chart.png', 'knife_charttext', '')">View Image</a>
+                        <a href="#" class="btn" onclick="showChart(event, 'Location8', figure_8_spec)">View Recreated Chart</a>
+                        <a href="#" class="btn" onclick="showChart(event, 'Location9', figure_9_spec)">View Improved Chart</a>
+                    </div>
+                    
+                    <div id="knifeChartContainer" class="image-container">
+                    </div>
+                    
+                    <div id="Location8Container">
+                        <figure id="Location8"></figure>
+                    </div>
+                    
+                    <div id="Location9Container">
+                        <figure id="Location9"></figure>
+                        <p id="Location9Text">Changed the color from green to orange to help colour blindness, used a horizontal chart instead of vertical, cited sources and added both axes.</p>
+                    </div>
+
+                </div>
+                <div class="project-card">
+                    <h3>CC5</h3>
+                    <p>Scraper chart. <a href="https://colab.research.google.com/drive/1LXUkSNwpR4NKEz6o5CpgOE77YR4Qj0TE?usp=sharing">Click me for CC5 colab link</a></p>
+                    <div class="button-group">
+                        <a href="#" class="btn" onclick="showChart(event, 'Location10', figure_10_spec)">View Chart</a>
+                        <div id="Location10Container">
+                            <figure id="Location10"></figure>
+                            <p id="Location10Text">I selected this site since I wanted to identify which nation has the most UEFA Champions League titles.</p>
+                        </div>
+                </div>
+                
+        </section>
+
+        <section id="projects" class="section projects">
+            <div class="project-grid cc6-dashboard">
+                <div class="project-card">
+                    <h3>CC6</h3>
+                    <p>Looping and Dashboard <a href="https://colab.research.google.com/drive/19b9BDMltsTP_y7s5PhF_E5PsYhPgVxSi?usp=sharing">Click me for CC6 colab link</a></p>
+                    <div class="dashboard-grid">
+                        <div>
+                            <a href="#" class="btn" onclick="showChart(event, 'Location11', figure_11_spec)">View Imports</a>
+                            <div id="Location11Container"><figure id="Location11"></figure></div>
+                        </div>
+                        <div>
+                            <a href="#" class="btn" onclick="showChart(event, 'Location12', figure_12_spec)">View Exports</a>
+                            <div id="Location12Container"><figure id="Location12"></figure></div>
+                        </div>
+                        <div>
+                            <a href="#" class="btn" onclick="showChart(event, 'Location13', figure_13_spec)">View CPIH Annual Rate</a>
+                            <div id="Location13Container"><figure id="Location13"></figure></div>
+                        </div>
+                        <div>
+                            <a href="#" class="btn" onclick="showChart(event, 'Location14', figure_14_spec)">View OS Visits to UK</a>
+                            <div id="Location14Container"><figure id="Location14"></figure></div>
+                        </div>
+                        <div>
+                            <a href="#" class="btn" onclick="showChart(event, 'Location15', figure_15_spec)">View UK Visits Abroad</a>
+                            <div id="Location15Container"><figure id="Location15"></figure></div>
+                        </div>
+                        <div>
+                            <a href="#" class="btn" onclick="showChart(event, 'Location16', figure_16_spec)">View Net Debt</a>
+                            <div id="Location16Container"><figure id="Location16"></figure></div>
+                        </div>
+                        <div>
+                            <a href="#" class="btn" onclick="showChart(event, 'Location17', figure_17_spec)">View Net Investment</a>
+                            <div id="Location17Container"><figure id="Location17"></figure></div>
+                        </div>
+                        <div>
+                            <a href="#" class="btn" onclick="showChart(event, 'Location18', figure_18_spec)">View Employment Rate</a>
+                            <div id="Location18Container"><figure id="Location18"></figure></div>
+                        </div>
+                        <div>
+                            <a href="#" class="btn" onclick="showChart(event, 'Location19', figure_19_spec)">View Unemployment Rate</a>
+                            <div id="Location19Container"><figure id="Location19"></figure></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         
-        <figure id="Location7"></figure>
-    </section>
-    
-    <section> 
-        <h2>CC4 Tasks</h2>
-        <img width="500" src="img/knife_chart.png" alt="Knife attacks chart in UK">
-    
-    </section>
+        <section id="projects" class="section projects">
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>CC7</h3>
+                    <p>Maps, Base Maps and Chloropleth</p>
+                    <div class="button-group">
+                        <a href="#" class="btn" onclick="showChart(event, 'Location20', figure_20_spec)">View Map</a>
+                    </div>
+                    <div id="Location20Container">
+                        <figure id="Location20"></figure>
+                        <p id="Location20Text">The choropleth map above shows the total violent crime by state in the United States, with darker colors indicating higher crime rates.</p>
+                    </div>
+                    
+                </div>
+                <div class="project-card">
+                    <h3>CC8</h3>
+                    <p>Advanced analytics.</p>
+                    <div class="button-group">
+                        <a href="#" class="btn" onclick="showChart(event, 'Location21', figure_21_spec)">View Chart</a>
+                        <a href="#" class="btn" onclick="showChart(event, 'Location22', figure_22_spec)">View Chart</a>
+                        <div id="Location21Container">
+                            <figure id="Location21"></figure>
+                        </div>
+                        <div id="Location22Container">
+                            <figure id="Location22"></figure>
+                        </div>
+                </div>
+        </section>
 
-    <section>
-        <div class="chart-description"> </div>
-        <h4>Replicated chart</h4>
-        <figure id="Location8"></figure>
-    </section>
-    
-    <section>
-        <div class="chart-description"> </div>
-        <h4>Improved chart</h4>
-        <figure id="Location9"></figure>
-        <p>Changed the color from green to orange to help colour blindness, used a horizontal chart instead of vertical, cited sources and added both axes.</p>
-    </section>
+        <section id="projects" class="section projects">
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>CC9</h3>
+                    <p>Big Data</p>
+                    <div class="button-group">
+                        <a href="#" class="btn" onclick="toggleImageWithText(event, 'basmatiriceContainer', 'img/basmati_graph.png', 'basmatiriceText', 'Labeled both x and y axes, gave a title and subtitle,cited sources and changed the color of graph')">View Basmati Rice Graph</a>
+                        <a href="#" class="btn" onclick="toggleImageWithText(event, 'bananaContainer', 'img/banana_graph.png', 'bananaText', '')">View Banana Graph</a>
+                    </div>
+                    
+                    <div id="bananaContainer" class="image-container"></div>
+                     <p id="bananaText" class="hidden"></p>
 
-    <section>
-        <h2>CC5 Tasks</h2>
-        <a href="https://colab.research.google.com/drive/1LXUkSNwpR4NKEz6o5CpgOE77YR4Qj0TE?usp=sharing">Click me for CC5 colab link</a>
-    </section>
 
-    <section>
-        <figure id="Location10"></figure>
-        <p>I selected this site since I wanted to identify which nation has the most UEFA Champions League titles.</p>
-    </section>
+                    <div id="basmatiriceContainer" class="image-container"></div>
+                    <p id="basmatiriceText" class="hidden"></p>
+                 </div>
+                 <div class="project-card">
+                    <h3>CC10</h3>
+                    <p>Interactive Visualizations</p>
+                    <div class="button-group">
+                        <a href="#" class="btn" onclick="showChart(event, 'Location23', figure_23_spec)">View Map</a>
+                        <a href="#" class="btn" onclick="showChart(event, 'Location24', figure_24_spec)">View Map</a>
+                        <div id="Location23Container">
+                            <figure id="Location23"></figure>
+                        </div>
+                        <div id="Location24Container">
+                            <figure id="Location24"></figure>
+                        </div>
 
-    <section>
-        <h2>CC6 Tasks</h2>
-        <a href="https://colab.research.google.com/drive/19b9BDMltsTP_y7s5PhF_E5PsYhPgVxSi?usp=sharing">Click me for CC6 colab link</a>
-        <div class="dashboard">
-            <figure id="Location11"></figure>
-            <figure id="Location12"></figure>
-            <figure id="Location13"></figure>
-            <figure id="Location14"></figure>
-            <figure id="Location15"></figure>
-            <figure id="Location16"></figure>
-            <figure id="Location17"></figure>
-            <figure id="Location18"></figure>
-            <figure id="Location19"></figure>
-        </div>
-    </section>
-    
-    <style>
-        .dashboard {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-gap: 20px;
-        }
-        .chart {
-            background: white;
-            padding: 10px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-    </style>
+                 </div>
 
-    <section>
-        <h2>CC7 Tasks</h2>
-        <figure id="Location20"></figure>
-        <p>The choropleth map above shows the total violent crime by state in the United States, with darker colors indicating higher crime rates.</p>
-    </section>
+                
+        </section>
 
-    <section>
-        <h2>CC8 Tasks</h2>
-        <figure id="Location21"></figure>
-    </section>
+      <!-- Contact me starts here -->
 
-    <section>
-        <figure id="Location22"></figure>
-    </section>
+        <section id="contact" class="section contact">
+            <h2>Contact</h2>
+            <p>Feel free to reach out to me on <a href="https://www.linkedin.com/in/adam-zikry-70b257240/">LinkedIn</a> or <a href="https://github.com/adamelzikry13">GitHub</a>.</p>
+            <button id="backToTop" class="back-to-top">Back to Top</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>Your's Truly portfolio</p>
+    </footer>
+
+
+    <!-- Where the Magic Happens -->
 
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
-    <script>
 
-        let figure_1_spec = "https://raw.githubusercontent.com/EconomicsObservatory/courses/main/2/s2_chart2.json"; 
-        let figure_2_spec = "https://raw.githubusercontent.com/RDeconomist/RDeconomist.github.io/refs/heads/main/charts/korea/agingPopulation.json"  
+
+    <script>
+        
+        let figure_2_spec = "https://raw.githubusercontent.com/RDeconomist/RDeconomist.github.io/refs/heads/main/charts/korea/agingPopulation.json"
         let figure_3_spec = "https://raw.githubusercontent.com/RDeconomist/RDeconomist.github.io/refs/heads/main/charts/crypto/chartcrypto12.json"
         let figure_4_spec = "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/Japan%20GDP.json"
         let figure_5_spec = "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/Bangladesh_unemployment_rate.json"
@@ -198,34 +275,94 @@
         let figure_20_spec = "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/Maps/CC7/us_violent_crime_map.json"
         let figure_21_spec = "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/Project/Charts/inflation_against_btcreserves.json"
         let figure_22_spec = "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/Project/Charts/Risk-Return.json"
+        let figure_23_spec = "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/child_mortality_map.json"
+        let figure_24_spec = "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/petrol_price_map.json"
 
+
+    function showChart(event, locationId, chartSpec) {
+    event.preventDefault(); 
+
+    const container = document.getElementById(`${locationId}Container`);
+    const figureElement = document.getElementById(locationId);
+    const textElement = document.getElementById(`${locationId}Text`);
+
+    if (figureElement.classList.contains("chart-loaded")) {
+        figureElement.innerHTML = ""; 
+        container.style.display = "none"; 
+        figureElement.classList.remove("chart-loaded");
+    } else {
+        vegaEmbed(`#${locationId}`, chartSpec);
+        container.style.display = "block"; 
+        figureElement.classList.add("chart-loaded");
+    }
+}
+
+function toggleImageWithText(event, containerId, imagePath, textId, textContent) {
+    event.preventDefault();
+
+    const container = document.getElementById(containerId);
+    const textElement = document.getElementById(textId);
+
+    if (container.classList.contains("image-loaded")) {
+        container.innerHTML = ""; 
+        container.classList.remove("image-loaded");
+        textElement.textContent = ""; 
+        textElement.classList.remove("visible");
+        textElement.classList.add("hidden");
+    } else {
+        container.innerHTML = `<img src="${imagePath}" alt="Dynamic Chart" class="dynamic-image">`;
+        container.classList.add("image-loaded");
+        textElement.textContent = textContent; 
+        textElement.classList.remove("hidden");
+        textElement.classList.add("visible");
+    }
+}
+
+
+
+function showChart(event, locationId, chartSpec) {
+    event.preventDefault();
+
+    const container = document.getElementById(`${locationId}Container`);
+    const figureElement = document.getElementById(locationId);
+
+    if (figureElement.classList.contains("chart-loaded")) {
+        figureElement.innerHTML = ""; 
+        container.style.display = "none"; 
+        figureElement.classList.remove("chart-loaded");
+    } else {
+        vegaEmbed(`#${locationId}`, chartSpec); 
+        container.style.display = "block"; 
+        figureElement.classList.add("chart-loaded");
+    }
+}
+
+document.querySelectorAll('.navbar a').forEach(link => {
+    link.addEventListener('click', function (event) {
+        const targetId = this.getAttribute('data-target');
         
+        if (targetId) {
+            event.preventDefault();
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth', 
+                    block: 'start'     
+                });
+            }
+        }
         
-        vegaEmbed('#Location1', figure_1_spec) 
-        vegaEmbed('#Location2', figure_2_spec)
-        vegaEmbed('#Location3', figure_3_spec)
-        vegaEmbed('#Location4', figure_4_spec)
-        vegaEmbed('#Location5', figure_5_spec)
-        vegaEmbed('#Location6', figure_6_spec)
-        vegaEmbed('#Location7', figure_7_spec)
-        vegaEmbed('#Location8', figure_8_spec)
-        vegaEmbed('#Location9', figure_9_spec)
-        vegaEmbed('#Location10', figure_10_spec)
-        vegaEmbed('#Location11', figure_11_spec)
-        vegaEmbed('#Location12', figure_12_spec)
-        vegaEmbed('#Location13', figure_13_spec)
-        vegaEmbed('#Location14', figure_14_spec)
-        vegaEmbed('#Location15', figure_15_spec)
-        vegaEmbed('#Location16', figure_16_spec)
-        vegaEmbed('#Location17', figure_17_spec)
-        vegaEmbed('#Location18', figure_18_spec)
-        vegaEmbed('#Location19', figure_19_spec)
-        vegaEmbed('#Location20', figure_20_spec)
-        vegaEmbed('#Location21', figure_21_spec)
-        vegaEmbed('#Location22', figure_22_spec)
+    });
+});
+
+document.getElementById('backToTop').addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // Smooth scroll animation
+    });
+});
 
     </script>
-
 </body>
-    
+
 </html>
