@@ -2,13 +2,16 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 500,
   "height": 400,
+  "background": "#112240",
   "title": {
   "text": "Fuel Price Per Gallon",
   "subtitle": "Price of Fuel Per Gallon in USD worldwide | Source: kaggle",
   "anchor": "start",
   "fontSize": 16,
+  "color": "#64ffda",
   "subtitleFontSize": 10,
-  "subtitleFontStyle": "italic"
+  "subtitleFontStyle": "italic",
+  "subtitleColor": "#64ffda"
 },
   "data": {
     "url": "https://raw.githubusercontent.com/clinia/metabase-maps-geodata/refs/heads/master/country/worldHigh.json",
@@ -49,6 +52,18 @@
       {"field": "Price Per Gallon (USD)", "type": "quantitative", "title": "Price Per Gallon (USD)"}
     ]
   },
+
+  "config": {
+    "legend": {
+      "titleFont": "Inter",
+      "titleFontSize": 12,
+      "titleColor": "#64ffda",  
+      "labelFont": "Inter",
+      "labelFontSize": 12,
+      "labelColor": "#64ffda"  
+    }
+  },
+
   "params": [
     {
       "name": "colorScheme",
@@ -60,4 +75,4 @@
       }
     }
   ]
-}
+} 
