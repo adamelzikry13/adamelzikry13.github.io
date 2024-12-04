@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 500,
+  "width": 550,
   "height": 400,
   "background": "#112240",
   "title": {
@@ -61,7 +61,7 @@
   "config": {
     "legend": {
       "titleFont": "Inter",
-      "titleFontSize": 14,
+      "titleFontSize": 12,
       "titleColor": "#64ffda",  
       "labelFont": "Inter",
       "labelFontSize": 12,
