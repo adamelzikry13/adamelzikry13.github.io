@@ -1,12 +1,17 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Line chart with toggle buttons for BTC, ETH, and XAU prices, and dynamic y-axis scaling.",
+  "width": 600,
+  "height": 350,
+  "background": "#112240",
   "title": {
   "text": "Price Chart",
   "subtitle": "A comparison of BTC, ETH, XAU, and USD/EUR prices | Source: invsesting.com",
   "fontSize": 16,
+  "color": "#64ffda",
   "subtitleFontSize": 10,
   "subtitleFontStyle": "italic",
+  "subtitleColor": "#64ffda",
   "anchor": "start"
   },
   "data": {
@@ -35,7 +40,7 @@
       "type": "nominal",
       "scale": {
         "domain": ["BTC Price", "ETH Price", "XAU Price", "USD/EUR Price"],
-        "range": ["blue", "green", "gold", "purple"]
+        "range": ["orange", "green", "gold", "purple"]
       },
       "title": "Asset"
     },
@@ -44,8 +49,6 @@
       {"field": "Price", "type": "quantitative", "title": "Price (USD)"}
     ]
   },
-  "width": 600,
-  "height": 350,
   "params": [
     {
       "name": "toggleBTC",
@@ -62,5 +65,23 @@
       "value": true,
       "bind": {"input": "checkbox", "name": "Show XAU Price"}
     }
-  ]
-}
+  ],
+  "config": {
+    "legend": {
+      "titleFont": "Inter",
+      "titleFontSize": 12,
+      "titleColor": "#64ffda",
+      "labelFont": "Inter",
+      "labelFontSize": 12,
+      "labelColor": "#64ffda"
+    },
+    "axis": {
+      "titleFont": "Inter",
+      "titleFontSize": 14,
+      "titleColor": "#64ffda",  
+      "labelFont": "Inter",
+      "labelFontSize": 12,
+      "labelColor": "#64ffda"   
+    }
+  }
+} 

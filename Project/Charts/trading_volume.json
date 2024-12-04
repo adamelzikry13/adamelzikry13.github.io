@@ -1,67 +1,89 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "description": "Stacked Area Chart of BTC, Gold, and Silver Trading Volumes (Before 2021)",
-    "title": {
-        "text": "BTC, Gold and Silver",
-        "subtitle": "Volume of BTC, Gold and Silver Volume In US$ | Source: coinmarketcap.com, LBMA",
-        "fontSize": 16,
-        "subtitleFontSize": 10,
-        "subtitleFontStyle": "italic",
-        "anchor": "start"
-      },
-    "data": {
-      "url": "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/Project/CSV/combined_btc_gold_silver.csv",
-      "format": {"type": "csv"}
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Stacked Area Chart of BTC, Gold, and Silver Trading Volumes (Before 2021)",
+  "width":600,
+  "height": 350,
+  "background": "#112240",
+  "title": {
+      "text": "BTC, Gold and Silver",
+      "subtitle": "Volume of BTC, Gold and Silver Volume In US$ | Source: coinmarketcap.com, LBMA",
+      "fontSize": 16,
+      "color": "#64ffda",
+      "subtitleFontSize": 10,
+      "subtitleFontStyle": "italic",
+      "subtitleColor": "#64ffda",
+      "anchor": "start"
     },
-    "transform": [
-      {
-        "filter": "toDate(datum.Month) < datetime(2020, 7, 1)"
-      },
-      {
-        "fold": ["Gold Volume", "Silver Volume", "BTC Volume"],
-        "as": ["Asset", "Volume"]
-      },
-      {
-        "calculate": "substring(datum.Month, 0, 4)",
-        "as": "Year"
-      }
-    ],
-    "mark": {
-      "type": "area",
-      "interpolate": "monotone"
+  "data": {
+    "url": "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/Project/CSV/combined_btc_gold_silver.csv",
+    "format": {"type": "csv"}
+  },
+  "transform": [
+    {
+      "filter": "toDate(datum.Month) < datetime(2020, 7, 1)"
     },
-    "encoding": {
-      "x": {
-        "field": "Month",
-        "type": "temporal",
-        "axis": {"title": "Date", "format": "%Y"}
+    {
+      "fold": ["Gold Volume", "Silver Volume", "BTC Volume"],
+      "as": ["Asset", "Volume"]
+    },
+    {
+      "calculate": "substring(datum.Month, 0, 4)",
+      "as": "Year"
+    }
+  ],
+  "mark": {
+    "type": "area",
+    "interpolate": "monotone"
+  },
+  "encoding": {
+    "x": {
+      "field": "Month",
+      "type": "temporal",
+      "axis": {"title": "Date", "format": "%Y"}
+    },
+    "y": {
+      "field": "Volume",
+      "type": "quantitative",
+      "stack": "zero",
+      "axis": {"title": "Trading Volume (in billions)"}
+    },
+    "color": {
+      "field": "Asset",
+      "type": "nominal",
+      "scale": {
+        "domain": ["BTC Volume", "Gold Volume", "Silver Volume"],
+        "range": ["Orange", "Gold", "Silver"]
       },
-      "y": {
+      "title": "Asset"
+    },
+    "tooltip": [
+      {"field": "Month", "type": "temporal", "title": "Date", "format": "%Y-%m"},
+      {"field": "Asset", "type": "nominal", "title": "Asset"},
+      {
         "field": "Volume",
         "type": "quantitative",
-        "stack": "zero",
-        "axis": {"title": "Trading Volume (in billions)"}
-      },
-      "color": {
-        "field": "Asset",
-        "type": "nominal",
-        "scale": {
-          "domain": ["BTC Volume", "Gold Volume", "Silver Volume"],
-          "range": ["Orange", "Gold", "Silver"]
-        },
-        "title": "Asset"
-      },
-      "tooltip": [
-        {"field": "Month", "type": "temporal", "title": "Date", "format": "%Y-%m"},
-        {"field": "Asset", "type": "nominal", "title": "Asset"},
-        {
-          "field": "Volume",
-          "type": "quantitative",
-          "title": "Volume (in billions)",
-          "format": ",.2f"
-        }
-      ]
-    },
-    "width": 600,
-    "height": 350
+        "title": "Volume (in billions)",
+        "format": ",.2f"
+      }
+    ]
+  },
+  "config": {
+  "legend": {
+    "titleFont": "Inter",
+    "titleFontSize": 12,
+    "titleColor": "#64ffda",
+    "labelFont": "Inter",
+    "labelFontSize": 12,
+    "labelColor": "#64ffda"
+  },
+  "axis": {
+    "titleFont": "Inter",
+    "titleFontSize": 14,
+    "titleColor": "#64ffda",  
+    "labelFont": "Inter",
+    "labelFontSize": 12,
+    "labelColor": "#64ffda"   
   }
+}
+  
+}

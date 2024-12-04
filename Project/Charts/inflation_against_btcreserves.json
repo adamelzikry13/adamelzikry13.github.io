@@ -1,58 +1,77 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": {
-      "text": "Inflation against BTC in reserves",
-      "subtitle": "Does inflation rate play a part in holding crypto in reserves? | Source: coinmarketcap.com, gfmag.com",
-      "fontSize": 16,
-      "subtitleFontSize": 10,
-      "subtitleFontStyle": "italic",
-      "anchor": "start"
-    },
-    "data": {
-      "url": "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/Project/CSV/filtered_inflation_data.csv",
-      "format": {"type": "csv"}
-    },
-    "transform": [
-      {
-        "lookup": "Country",
-        "from": {
-          "data": {
-            "url": "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/Project/Maps/countries_and_government_fixed.csv",
-            "format": {"type": "csv"}
-          },
-          "key": "Entity",
-          "fields": ["# of BTC"]
-        }
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "#112240",
+  "title": {
+    "text": "Inflation against BTC in reserves",
+    "subtitle": "Does inflation rate play a part in holding crypto in reserves? | Source: coinmarketcap.com, gfmag.com",
+    "fontSize": 16,
+    "color": "#64ffda",
+    "subtitleFontSize": 10,
+    "subtitleFontStyle": "italic",
+    "subtitleColor": "#64ffda",
+    "anchor": "start"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/Project/CSV/filtered_inflation_data.csv",
+    "format": {"type": "csv"}
+  },
+  "transform": [
+    {
+      "lookup": "Country",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/Project/Maps/countries_and_government_fixed.csv",
+          "format": {"type": "csv"}
+        },
+        "key": "Entity",
+        "fields": ["# of BTC"]
       }
-    ],
-    "mark": "circle",
-    "encoding": {
-      "x": {
-        "field": "2024",
-        "type": "quantitative",
-        "title": "Inflation Rate"
-      },
-      "y": {
-        "field": "# of BTC",
-        "type": "quantitative",
-        "title": "# of BTC Reserves"
-      },
-      "size": {
-        "field": "# of BTC",
-        "type": "quantitative",
-        "title": "Bubble Size (Relative to # of BTC)",
-        "scale": {"range": [10, 1000]}  
-      },
-      "color": {
-        "field": "Country",
-        "type": "nominal",
-        "title": "Country"
-      },
-      "tooltip": [
-        {"field": "Country", "type": "nominal", "title": "Country"},
-        {"field": "# of BTC", "type": "quantitative", "title": "# of BTC Reserves"}
-      ]
     }
-  
+  ],
+  "mark": "circle",
+  "encoding": {
+    "x": {
+      "field": "2024",
+      "type": "quantitative",
+      "title": "Inflation Rate"
+    },
+    "y": {
+      "field": "# of BTC",
+      "type": "quantitative",
+      "title": "# of BTC Reserves"
+    },
+    "size": {
+      "field": "# of BTC",
+      "type": "quantitative",
+      "title": "Bubble Size (Relative to # of BTC)",
+      "scale": {"range": [10, 1000]}
+    },
+    "color": {
+      "field": "Country",
+      "type": "nominal",
+      "title": "Country"
+    },
+    "tooltip": [
+      {"field": "Country", "type": "nominal", "title": "Country"},
+      {"field": "# of BTC", "type": "quantitative", "title": "# of BTC Reserves"}
+    ]
+  },
+  "config": {
+    "legend": {
+      "titleFont": "Inter",
+      "titleFontSize": 12,
+      "titleColor": "#64ffda",
+      "labelFont": "Inter",
+      "labelFontSize": 12,
+      "labelColor": "#64ffda"
+    },
+    "axis": {
+      "titleFont": "Inter",
+      "titleFontSize": 14,
+      "titleColor": "#64ffda",  
+      "labelFont": "Inter",
+      "labelFontSize": 12,
+      "labelColor": "#64ffda"   
+    }
   }
-  
+} 

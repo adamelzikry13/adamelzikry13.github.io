@@ -1,14 +1,22 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Risk-Return",
+  "background": "#112240",
+  "title": {
+        "text": "Risk-Return",
+        "fontSize": 20,
+        "color": "#64ffda"
+      },
+
   "hconcat": [
     {
       "title": {
         "text": "BTC",
         "subtitle": "Risk-Return of BTC | Source: Statmuse, Bitbo",
         "fontSize": 16,
+        "color": "#64ffda",
         "subtitleFontSize": 10,
         "subtitleFontStyle": "italic",
+        "subtitleColor": "#64ffda",
         "anchor": "start"
       },
       "data": {
@@ -65,8 +73,10 @@
         "text": "Gold",
         "subtitle": "Risk-Return of Gold | Source: FRED, upmyinterest",
         "fontSize": 16,
+        "color": "#64ffda",
         "subtitleFontSize": 10,
         "subtitleFontStyle": "italic",
+        "subtitleColor": "#64ffda",
         "anchor": "start"
       },
       "data": {
@@ -123,8 +133,10 @@
         "text": "US 10 Year Bond",
         "subtitle": "Risk-Return of Bonds | Source: FRED, Statista",
         "fontSize": 16,
+        "color": "#64ffda",
         "subtitleFontSize": 10,
         "subtitleFontStyle": "italic",
+        "subtitleColor": "#64ffda",
         "anchor": "start"
       },
       "data": {
@@ -176,6 +188,23 @@
         }
       ]
     }
-  ],
+  ],"config": {
+    "axis": {
+      "titleFont": "Inter",
+      "titleFontSize": 14,
+      "titleColor": "#64ffda",  
+      "labelFont": "Inter",
+      "labelFontSize": 12,
+      "labelColor": "#64ffda"   
+    }, 
+    "legend": {
+      "titleFont": "Inter",
+      "titleFontSize": 12,
+      "titleColor": "#64ffda",
+      "labelFont": "Inter",
+      "labelFontSize": 12,
+      "labelColor": "#64ffda"
+    }
+  },
   "spacing": 5
-}
+} 
