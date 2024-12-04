@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 500,
   "height": 400,
-  "background": "none",
+  "background": "whitesmoke",
   "title": {
     "text": "Under-five mortality rate",
     "subtitle": "Mortality rate for children under five | Source: ourworldindata",
