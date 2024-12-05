@@ -15,7 +15,7 @@
   "anchor": "start"
   },
   "data": {
-    "url": "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/Project/CSV/cleaned_price_difference_no_commas_v2.csv",
+    "url": "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/Project/CSV/combined_historical_data_cleaned.csv",
     "format": {"type": "csv"}
   },
   "transform": [
