@@ -35,7 +35,7 @@
       "lookup": "properties.name",
       "from": {
         "data": {
-          "url": "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13project/refs/heads/main/CSV/cleaned_cryptoadoption_rates.csv",
+          "url": "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/Project/CSV/cleaned_cryptoadoption_rates.csv",
           "format": {"type": "csv"}
         },
         "key": "Country",
