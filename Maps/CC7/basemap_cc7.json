@@ -1,0 +1,15 @@
+{"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 600,
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/clinia/metabase-maps-geodata/refs/heads/master/country/usaHigh.json",
+    "format": {"property":"features"}
+  },
+  "projection": {"type": "mercator"},
+  "mark": {"type": "geoshape", "fill": "grey", "stroke": "lightgrey"},
+  "encoding": {
+    "tooltip": [
+      {"field": "properties.name", "type": "nominal", "title": "State"}
+    ] 
+  }
+} 
