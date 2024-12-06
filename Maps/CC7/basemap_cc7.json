@@ -1,5 +1,5 @@
 {"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 600,
+  "width": 400,
   "height": 400,
   "data": {
     "url": "https://raw.githubusercontent.com/clinia/metabase-maps-geodata/refs/heads/master/country/usaHigh.json",
