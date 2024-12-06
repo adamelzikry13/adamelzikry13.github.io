@@ -173,6 +173,10 @@ img {
     display: none; 
 }
 
+#Location25Container {
+    display: none; 
+}
+
 .center-content {
     display: flex;
     justify-content: center; 
@@ -229,8 +233,8 @@ a:hover {
     width: 40px;
     height: 40px;
     background-color: transparent;
-    border-radius: 50%; /* For circular icons */
-    box-shadow: none;  /* Remove any box-shadow effects */
+    border-radius: 50%; 
+    box-shadow: none;  
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 

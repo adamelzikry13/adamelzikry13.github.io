@@ -178,8 +178,15 @@
                     <h3>CC7</h3>
                     <p>Maps, Base Maps and Chloropleth</p>
                     <div class="button-group">
-                        <a href="#" class="btn" onclick="showChart(event, 'Location20', figure_20_spec)">View Map</a>
+                        <a href="#" class="btn" onclick="showChart(event, 'Location25', figure_25_spec)">View Base Map</a>
+                        <a href="#" class="btn" onclick="showChart(event, 'Location20', figure_20_spec)">View Crimes Map</a>
                     </div>
+
+                    <div id="Location25Container">
+                        <figure id="Location25"></figure>
+                        <p id="Location25Text">This is a base map of USA divided into it's States.</p>
+                    </div>
+
                     <div id="Location20Container">
                         <figure id="Location20"></figure>
                         <p id="Location20Text">The choropleth map above shows the total violent crime by state in the United States, with darker colors indicating higher crime rates.</p>
@@ -293,6 +300,7 @@
         let figure_22_spec = "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/Project/Charts/Risk-Return.json"
         let figure_23_spec = "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/child_mortality_map.json"
         let figure_24_spec = "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/petrol_price_map.json"
+        let figure_25_spec = "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/Maps/CC7/basemap_cc7.json"
 
 
     function showChart(event, locationId, chartSpec) {
