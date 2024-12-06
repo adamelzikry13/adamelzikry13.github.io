@@ -331,3 +331,32 @@ a:hover {
         transform: translateY(0);
     }
 }
+
+.moving-text {
+    display: inline-block; 
+    white-space: nowrap;
+    animation: move-across 10s linear infinite; 
+    font-size: 1.2em; 
+    color: white; 
+}
+
+@keyframes move-across {
+    0% {
+        transform: translateX(200%); 
+        opacity: 0; 
+    }
+    10% {
+        transform: translateX(200%); 
+        opacity: 1; 
+    }
+    90% {
+        transform: translateX(-200%); 
+        opacity: 1; 
+    }
+    100% {
+        transform: translateX(-200%); 
+        opacity: 0; 
+    }
+}
+
+
