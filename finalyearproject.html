@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,15 +6,21 @@
     <title>Adam El - Final Year Project</title>
     <link rel="stylesheet" href="finalyearproject.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
 </head>
 <body>
     <header>
-        <nav class="navbar">
+        <nav class="navbar"> 
             <ul>
                 <li><a href="index.html">Back Home</a></li>
                 <li><a href="#aim">Aim</a></li>
                 <li><a href="#data">Data</a></li>
-                <li><a href="#challenges">Analytical Challenges & Colab Notebooks</a></li>
+                <li><a href="#challenges">Analytical Challenges</a></li>
                 <li><a href="#conclusion">Conclusion</a></li>
             </ul>
         </nav>
@@ -22,28 +28,24 @@
    
     <main>
         <section id="aim" class="section aim">
-            <h1>Final Year Project</h1>
-            <p>If you are a person who is currently or planning to work in the finance sector, you would probably have heard of the guy who recorded a YouTube video asking you to buy $1 worth of BTC in 2013. When the video was released BTC was worth $129, and fast forward 11 years later, BTC is about to break $100,000.In the span of a decade, Cryptocurrencies like Bitcoin or Ethereum have become more relevant and widely adopted. Traditionally, Countries have kept traditional assets such as gold, foreign currencies such as USD or EUR, bonds, or even silver as their reserves in order to stabilize their economies and reduce financial crises.
-                A fascinating question, though, is raised by the emergence of decentralized digital currencies: should countries include cryptocurrencies in their official reserves? 
-                Cryptocurrencies present a number of difficulties, such as price volatility, regulatory uncertainty, and environmental concerns, even though they also promise high returns, diversification, and inflation protection.</p> 
-            <p>Through the consideration of important factors including global competitiveness, risk management, and economic stability, the aim of this project is to seek and assess the viability and usefulness of adding cryptocurrencies to national reserves. In an increasingly digitalized global economy, it aims to investigate how cryptocurrencies could improve financial diversity, act as an inflation hedge, and offer a competitive edge. The study will, however, also look into possible drawbacks, including as market volatility, cybersecurity risks, and the absence of global regulatory frameworks.</p>
-            <p>Through the examination of financial data, economic observations, or data from nations that have experimented with digital assets, this study seeks to provide policymakers practical insights. Eventually, the initiative hopes to assist countries in determining if adding bitcoin to their reserves may make them more financially resilient or expose them to an asset that is highly volatile and is not suitable to be part of their reserves.</p>
+            <h1>Aim</h1>
+            <p>If you work in finance, you've likely heard of the video urging viewers to <a href="https://www.youtube.com/watch?v=Cw29h7LhEuE">buy $1 of Bitcoin (BTC) in 2013</a>. A decade later, BTC crossed $100,000, symbolizing the rapid growth of cryptocurrencies like Bitcoin and Ethereum. Traditionally, countries hold assets like gold, foreign currencies (USD/EUR), and bonds in reserves to stabilize economies and prevent crises. The rise of decentralized digital currencies, however, raises a key question: should cryptocurrencies be included in national reserves?</p>
+            <p>Cryptocurrencies offer high returns, diversification, and inflation protection but face challenges such as volatility, regulatory uncertainty, and cybersecurity risks. This project explores the feasibility and implications of adding cryptocurrencies to reserves, focusing on global competitiveness, risk management, and economic stability. It examines how cryptocurrencies could enhance financial diversity, act as an inflation hedge, and provide a competitive edge in a digitalized global economy while weighing risks like market volatility and the absence of regulatory frameworks.</p>
+            <p>By analyzing financial data, and economic trends from countries experimenting with digital assets, this study aims to offer policymakers actionable insights. Ultimately, it seeks to determine whether cryptocurrencies can strengthen financial resilience or if their volatility makes them unsuitable for inclusion in national reserves.</p>
     
         </section>
 
-        <section id="data" class="section data">
+        <section id="data" class="section data" data-aos="fade-down" data-aos-duration="1500">
             <h1>Data</h1>
             <div class="project-grid">
-                <div class="project-card">
+                <div class="project-card" data-aos="fade-down" data-aos-duration="1500">
                     <h3>How widely adopted is cryptocurrency?</h3>
                     <a href="#" class="btn" onclick="showChart(event, 'Location1', figure_1_spec)">View Crypto Adoption Map</a>
                     
                     <div id="Location1Container">
                         <figure id="Location1"></figure>
-                        <p id="Location1Text">Cryptocurrencies such as BTC were called a fad and hated by big investment banks and investment companies. Now, the same banks and companies even provide Spot ETFs for BTC and other cryptocurrencies. The map above shows how the adoption of cryptocurrency has increased as time goes on. 
-                            Starting in 2019, only a few countries had a crypto adoption higher than 10%, particularly countries from Latin America and Developing Nations had a higher crypto adoption rate compares to first world countries such as the US or UK. 
-                            All of this changed in 2023, where most of the countries have now widely adopted crypto. Thus, we can conclude from this that there is a clear trend of increasing cryptocurrency adoption globally as time progresses. This suggests that cryptocurrencies are becoming more mainstream, with countries adapting to crypto at varying speeds depending on economic, technological, and policy factors.
-                        </p>
+                        <p id="Location1Text">Starting in 2019, only a few countries had a crypto adoption higher than 10%, particularly countries from Latin America and Developing Nations had a higher crypto adoption rate compares to first world countries such as the US or UK. All of this changed in 2023, where most of the countries have now widely adopted crypto. This suggests that cryptocurrencies are becoming more mainstream, with countries adapting to crypto at varying speeds depending on economic, technological, and policy factors.</p>
+                        <p id="Location1Text">The data for this chart was obtained through <a href="https://www.statista.com/statistics/1202468/global-cryptocurrency-ownership/">Statista</a>. I downloaded the CSV given and ran the file on <a href="https://colab.research.google.com/drive/1D4rIxyUE2SRVPcgKX0HREl3u2ApA8xdL?usp=sharing">colab</a> to clean the data since it had irrelevant columns and the data had percentages inside the columns which can't be used on vegalite. Therefore I used pandas to clean the data up</p>
                     </div>
                 </div>
                 
@@ -52,23 +54,146 @@
 
         <section id="data" class="section data">
             <div class="project-grid">
-                <div class="project-card">
+                <div class="project-card" data-aos="fade-left" data-aos-duration="1500">
                     <h3>BTC growth as a global asset</h3>
                     <a href="#" class="btn" onclick="showChart(event, 'Location2', figure_2_spec)">View BTC Market Cap Chart</a>
                     
                     <div id="Location2Container">
                         <figure id="Location2"></figure>
-                        <p id="Location2Text">Cryptocurrencies such as BTC were called a fad and hated by big investment banks and investment companies. Now, the same banks and companies even provide Spot ETFs for BTC and other cryptocurrencies. The map above shows how the adoption of cryptocurrency has increased as time goes on. 
-                            Starting in 2019, only a few countries had a crypto adoption higher than 10%, particularly countries from Latin America and Developing Nations had a higher crypto adoption rate compares to first world countries such as the US or UK. 
-                            All of this changed in 2023, where most of the countries have now widely adopted crypto. Thus, we can conclude from this that there is a clear trend of increasing cryptocurrency adoption globally as time progresses. This suggests that cryptocurrencies are becoming more mainstream, with countries adapting to crypto at varying speeds depending on economic, technological, and policy factors.
-                        </p>
+                        <p id="Location2Text">BTC total market cap can also be related to its adoption rates. However, the chart also shows us how volatile BTC is. Bitcoin's volatility might pose a risk for some nations since reserves are typically stable. The data was obtained through <a href="https://www.coingecko.com/en/coins/bitcoin/historical_data?start=2013-04-27&end=2024-11-14">coingecko</a> and no cleaning was required. Sliders are included to control the data and historical BTC events are also present.</p>
                     </div>
                 </div>
                 
             </div>
         </section>
+
+        <section id="data" class="section data">
+            <div class="project-grid">
+                <div class="project-card" data-aos="fade-right" data-aos-duration="1500">
+                    <h3>Crypto Prices vs Traditional Assets</h3>
+                    <a href="#" class="btn" onclick="showChart(event, 'Location3', figure_3_spec)">View Comparison</a>
+                    
+                    <div id="Location3Container">
+                        <figure id="Location3"></figure>
+                        <p id="Location3Text">The chart shows us how volatile cryptocurrencies which can be seen by their price action compared to traditional assets which is more stable. The data for this chart was obtained through <a href="https://uk.investing.com/">investing.com</a>.  I cleaned and combined the data using pandas on <a href="https://colab.research.google.com/drive/1P3U2oFXSx6jpyKORdxPOQxuXJKHWzbcU?usp=sharing">colab</a> and included tickboxes since BTC skewed the data.</p>
+                        
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <section id="data" class="section data">
+            <div class="project-grid">
+                <div class="project-card" data-aos="fade-left" data-aos-duration="1500">
+                    <h3>Risk-Return of Crypto vs Traditional Assets</h3>
+                    <a href="#" class="btn" onclick="showChart(event, 'Location4', figure_4_spec)">View Comparison</a>
+                    
+                    <div id="Location4Container">
+                        <figure id="Location4"></figure>
+                        <p id="Location4Text">This chart compares Bitcoin, Gold, and Bonds, highlighting Bitcoin's high returns but volatility, Gold's stability, and Bonds' low-risk security for reserve diversification. The data for this chart was tedious to obtain. I had to webscrape data for gold and btc whereas the data for bonds was readily available. I then proceeded to clean the data and combine them using pandas. I also had to calculate gold's volatility using NumPy</p>
+                        <p id="Location4Text"> 
+                            <a href="https://colab.research.google.com/drive/1Ub6yhl3PPr0D7O9kFU561-DW3Vu-BKcm?usp=sharing">Gold scraper</a>
+                            <a href="https://colab.research.google.com/drive/1MCvC68idouWDqaV1OZHhmClCblv2dIrQ?usp=sharing">BTC scraper</a>
+                            <a href="https://colab.research.google.com/drive/1K6rP21naM9YLkwpH0Wt6xiRXfWxAdAoC?usp=sharing">Gold Returns </a>
+                            <a href="https://colab.research.google.com/drive/1y8QDbX2HrYt5tTuKBpK38aen6RfOuWxm?usp=sharing">BTC Returns </a>
+                            <a href="https://colab.research.google.com/drive/1KMZdFtb_EOHfyIKTptVobovRyQnATvbF?usp=sharing">Bonds Returns </a>
+                            <a href="https://colab.research.google.com/drive/1aRQfhj2hW3hwpEMwFHYYiK7QMKaDOLWA?usp=sharing">BTC Volatility</a>
+                            <a href="https://colab.research.google.com/drive/1AI5A_UbhYRjIz6xPREeaq8ozhcxoIeAD?usp=sharing">Gold Volatility</a>
+                            <a href="https://colab.research.google.com/drive/1LYZstzOhAnwVXKuINtzUCOo0_o6TbHLS">Combined Data</a>
+                        </p>
+                        
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <section id="data" class="section data">
+            <div class="project-grid">
+                <div class="project-card" data-aos="fade-right" data-aos-duration="1500">
+                    <h3>Does BTC have good liquidity?</h3>
+                    <a href="#" class="btn" onclick="showChart(event, 'Location5', figure_5_spec)">View Liquidity Chart</a>
+                    
+                    <div id="Location5Container">
+                        <figure id="Location5"></figure>
+                        <p id="Location5Text">The chart shows Bitcoin's surge in liquidity, surpassing Gold and Silver. High liquidity makes Bitcoin comparable to traditional assets but driven by speculation. To obtain this data, I only had to download the csv files and clean them using pandas. I then combined the data.</p>
+                        <p id="Location5">
+                            <a href="https://colab.research.google.com/drive/1PPdP01npGndMmXAlfJDiKJl0QkpcsLMk?usp=sharing">BTC Volume</a>
+                            <a href="https://colab.research.google.com/drive/18X2vrnPGzTAECzzdxRArEvUXD_spK6w9?usp=sharing">Gold and Silver Volume</a>
+                            <a href="https://colab.research.google.com/drive/1e6HGwdR8e-KKx8eGuY5M7yVoE8bWLR59?usp=sharing"> Combined</a>
+                        </p> 
+                        
+                        
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <section id="data" class="section data">
+            <div class="project-grid">
+                <div class="project-card" data-aos="fade-left" data-aos-duration="1500">
+                    <h3>Countries that currently hold BTC in their reserves</h3>
+                    <a href="#" class="btn" onclick="showChart(event, 'Location6', figure_6_spec)">View Reserves Map</a>
+                    
+                    <div id="Location6Container">
+                        <figure id="Location6"></figure>
+                        <p id ="Location6Text">The chart shows countries that currently have Bitcoin in their reserves. Larger countries with developed economies such as USA, China and the UK cautiously approach Bitcoin while smaller nations with less developed economics such as El Salvador, Bhutan and Ukraine see it as an opportunity to quickly grow their economy. 
+                            To obtain this data, I simply scraped <a href="https://treasuries.bitbo.io/"> bitbo</a> and had to clean the data using pandas on <a href="https://colab.research.google.com/drive/1Tta2ffwp-dD-NNksETqqtipUrgmhnSQ5?usp=sharing"> colab</a>
+                         </p>
+                        
+                    
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <section id="data" class="section data">
+            <div class="project-grid">
+                <div class="project-card" data-aos="fade-up" data-aos-duration="1500">
+                    <h3>Does Bitcoin provide a hedge against inflation?</h3>
+                    <a href="#" class="btn" onclick="showChart(event, 'Location7', figure_7_spec)">View Inflation Chart</a>
+                    
+                    <div id="Location7Container">
+                        <figure id="Location7"></figure>
+                        <p id ="Location7Text">The chart shows Bitcoin's dual role which is a hedge against inflation for high inflation countries like Ukraine and Bhutan, and a strategic, speculative asset for larger economies like the US and China to maintain financial influence and diversify reserves.To make this chart, I used the lookup transform from this <a href="https://colab.research.google.com/drive/1Tta2ffwp-dD-NNksETqqtipUrgmhnSQ5?usp=sharing"> colab</a> notebook and by using data that was scraped and cleaned in <a href="https://colab.research.google.com/drive/1Xn05BtycwLveoo9fZ9-Sl_0y_OsDeEF-?usp=sharing">here</a></p>
+
+                        
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+        
+        <section id="challenges" class="section challenges" data-aos="fade-up" data-aos-duration="1500">
+            <h1>Analytical Challenges</h1>
+            <p data-aos="fade-right" data-aos-duration="1500">During my research, I encountered several challenges with data access and visualization. Many charts had to be scrapped due to paywalled or gated data, and attempts at web scraping often resulted in 403 Forbidden errors. This was a problem for me since initially, most of the data that I would be using was obtained through scraping. To resolve this, Finn suggested using headers or Selenium, which enabled me to scrape data like <a href="https://bitbo.io/volatility/"> BTC volatility</a>.</p>
+            <p data-aos="fade-left" data-aos-duration="1500">I initially planned to use APIs for crypto prices, volumes, and market caps but found that free APIs, such as CoinMarketCap, lacked historical data unless upgraded to a paid plan. Instead, I relied on CSV files from sources like Investing.com to fill this gap.
+                I also faced an issue with the volatility rates. The data was either unavailable in the needed format or not downloadable. To address this, I used NumPy to calculate average yearly volatility from collected data, enabling the creation of a risk-return chart.</p>
+            <p data-aos="fade-right" data-aos-duration="1500">Lastly, I faced issues embedding Python-generated interactive charts into HTML. Despite trying PyScript, it didn't solve the problem. I switched to using VegaLite charts, which allowed me to display my data effectively. These workarounds ensured I could analyze and present insights successfully, despite initial setbacks.</p> 
+        </section>
+
+        <section id="conclusion" class="section conclusion" data-aos="fade-up">
+            <h1>Conclusion</h1>
+            <p data-aos="fade-right" data-aos-duration="1500">Cryptocurrencies such as Bitcoin (BTC) once dismissed as fads by major banks and investment companies, are now seen as a legitimate investment even having Spot ETFs. The data above show increasing crypto adoption from 2019 till 2024. This trend indicates cryptocurrencies are becoming more mainstream. The data also reveals crypto's volatility compared to traditional assets such as BTC and Ethereum (ETH). They offer high returns but at the cost of high volatility. Which is the total opposite of traditional assets like gold and fiat currencies since they have proved themselves as traditional currencies thus no price speculation would occur. Bitcoin's high growth potential is paired with its risks. Whereas gold and bonds offer stability and low to moderate returns. Countries looking to adopt BTC should combine these assets to achieve growth and reduce their risk.</p>
+            <p data-aos="fade-left" data-aos-duration="1500">Bitcoin's liquidity surpasses traditional assets like gold and silver which is caused by numerous external factors such as halving cycles or a bull run. This high liquidity ensures governments are able to sell off their BTC without having an impact on the market. If we take a look at smaller economies such as El Salvador for example, where BTC is considered as legal tender, They leveraged BTC for diversification and its potential growth. However developed economies like the US and China hold it strategically. Therefore, we can conclude that high inflation nations use Bitcoin as a hedge due to its decentralization and fixed supply while larger economies see it as a complementary asset.</p>
+            <p data-aos="fade-up" data-aos-duration="1500">Thus, should countries include crypto in their reserves? Yes, selectively. Crypto can diversify, quickly grow and modernize reserves, but its volatility requires pairing with traditional assets to ensure balance. As the saying goes, Don’t put all of your eggs in one basket</p>
+
+            <button id="backToTop" class="back-to-top">Back to Top</button>
+        </section>
+
+        
     
-    
+        <footer>
+            <p>© Adam Zikry</p>
+        </footer>
 
     
 
@@ -84,18 +209,21 @@
 
 
    </main>
-         <!-- Scripts -->
+    <!------------------------------------------------------------- Scripts ---------------------------------------------------------------------->
     
-    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-
-
-
+    <script>
+        AOS.init();
+    </script>
+    
     <script>
         
         let figure_1_spec = "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/Project/Maps/crypto_adoption.json"
         let figure_2_spec = "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/Project/Charts/btc_mcap.json"
+        let figure_3_spec = "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/Project/Charts/crypto_againsts_traditional_assets.json"
+        let figure_4_spec = "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/Project/Charts/Risk-Return.json"
+        let figure_5_spec = "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/Project/Charts/trading_volume.json"
+        let figure_6_spec = "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/Project/Maps/countries_btc.json"
+        let figure_7_spec = "https://raw.githubusercontent.com/adamelzikry13/adamelzikry13.github.io/refs/heads/main/Project/Charts/inflation_against_btcreserves.json"
 
         function showChart(event, locationId, chartSpec) {
     event.preventDefault(); 
@@ -155,7 +283,30 @@ function showChart(event, locationId, chartSpec) {
     }
 }
 
+document.querySelectorAll('.navbar a').forEach(link => {
+    link.addEventListener('click', function (event) {
+        const targetId = this.getAttribute('data-target');
+        
+        if (targetId) {
+            event.preventDefault();
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth', 
+                    block: 'start'     
+                });
+            }
+        }
+        
+    });
+});
 
+document.getElementById('backToTop').addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' 
+    });
+});
 
 
 

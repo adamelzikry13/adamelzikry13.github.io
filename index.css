@@ -195,8 +195,8 @@ img {
     display: inline-block;
     margin-top: 20px;
     padding: 10px 20px;
-    background-color: #64ffda; /* Match your theme */
-    color: #112240; /* Contrast with the background */
+    background-color: #64ffda; 
+    color: #112240; 
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -206,5 +206,48 @@ img {
 }
 
 .back-to-top:hover {
-    background-color: #52d6ba; /* Slightly darker for hover effect */
+    background-color: #52d6ba; 
+}
+
+a {
+    color: #64ffda; 
+    text-decoration: none; 
+}
+
+a:hover {
+    color: #52d6ba; 
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border-radius: 50%; /* For circular icons */
+    box-shadow: none;  /* Remove any box-shadow effects */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+#about {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 2s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

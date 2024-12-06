@@ -190,7 +190,7 @@ img {
 }
 
 .project-card h3, .project-card p {
-    margin: 10px 0; /* Space out the text */
+    margin: 10px 0; 
 }
 
 #Location1Container {
@@ -226,4 +226,108 @@ input[type="range"] {
 
 #Location2Container {
     display: none; 
+}
+
+#Location3Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#Location3Container {
+    display: none; 
+}
+
+#Location4Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#Location4Container {
+    display: none; 
+}
+
+html {
+    scroll-behavior: smooth; 
+}
+
+#Location5Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#Location5Container {
+    display: none; 
+}
+
+#Location6Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#Location6Container {
+    display: none; 
+}
+
+#Location7Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#Location7Container {
+    display: none; 
+}
+
+a {
+    color: #64ffda; 
+    text-decoration: none; 
+}
+
+a:hover {
+    color: #52d6ba; 
+}
+
+.back-to-top {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #64ffda; 
+    color: #112240; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.back-to-top:hover {
+    background-color: #52d6ba; 
+}
+
+#aim {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 2s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

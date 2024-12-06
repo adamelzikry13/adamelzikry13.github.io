@@ -7,6 +7,12 @@
     <title>Adam El - Portfolio</title>
     <link rel="stylesheet" href="index.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
 </head>
 
 <body>
@@ -30,10 +36,10 @@
                 This experience has deepened my understanding of the industry and its potential to shape the future of finance and technology.</p>
         </section>
 
-        <section id="projects" class="section projects">
+        <section id="projects" class="section projects" data-aos="fade-up" data-aos-duration="1500">
             <h2>Tasks</h2>
             <div class="project-grid">
-                <div class="project-card">
+                <div class="project-card" data-aos="fade-right" data-aos-duration="1500">
                     <h3>CC1</h3>
                     <p>Hosting and displaying charts on my site</p>
                     <a href="#" class="btn" onclick="showChart(event, 'Location2', figure_2_spec)">View Chart 1</a>
@@ -46,7 +52,7 @@
                     </div>
                 </div>
                 
-                <div class="project-card">
+                <div class="project-card" data-aos="fade-left" data-aos-duration="1500">
                     <h3>CC2</h3>
                     <p>Building and creating my own visualizations</p>
                     <a href="#" class="btn" onclick="showChart(event,'Location4', figure_4_spec)">View Chart 1</a>
@@ -64,7 +70,7 @@
 
         <section id="projects" class="section projects">
             <div class="project-grid">
-                <div class="project-card">
+                <div class="project-card" data-aos="fade-up" data-aos-duration="1500">
                     <h3>CC3</h3>
                     <p>Argument: Countries that were colonised by the British Empire performed better (GDP) than non-colonised countries</p>
                     <div class="button-group">
@@ -84,7 +90,7 @@
 
         <section id="projects" class="section projects">
             <div class="project-grid">
-                <div class="project-card">
+                <div class="project-card" data-aos="fade-right" data-aos-duration="1500">
                     <h3>CC4</h3>
                     <p>Replicating, Recreating and Reimproving</p>
                     <div class="button-group">
@@ -106,7 +112,7 @@
                     </div>
 
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-aos="fade-left" data-aos-duration="1500">
                     <h3>CC5</h3>
                     <p>Scraper chart. <a href="https://colab.research.google.com/drive/1LXUkSNwpR4NKEz6o5CpgOE77YR4Qj0TE?usp=sharing">Click me for CC5 colab link</a></p>
                     <div class="button-group">
@@ -121,7 +127,7 @@
 
         <section id="projects" class="section projects">
             <div class="project-grid cc6-dashboard">
-                <div class="project-card">
+                <div class="project-card" data-aos="fade-up" data-aos-duration="1500">
                     <h3>CC6</h3>
                     <p>Looping and Dashboard <a href="https://colab.research.google.com/drive/19b9BDMltsTP_y7s5PhF_E5PsYhPgVxSi?usp=sharing">Click me for CC6 colab link</a></p>
                     <div class="dashboard-grid">
@@ -168,7 +174,7 @@
         
         <section id="projects" class="section projects">
             <div class="project-grid">
-                <div class="project-card">
+                <div class="project-card" data-aos="fade-right" data-aos-duration="1500">
                     <h3>CC7</h3>
                     <p>Maps, Base Maps and Chloropleth</p>
                     <div class="button-group">
@@ -180,7 +186,7 @@
                     </div>
                     
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-aos="fade-left" data-aos-duration="1500">
                     <h3>CC8</h3>
                     <p>Advanced analytics.</p>
                     <div class="button-group">
@@ -197,7 +203,7 @@
 
         <section id="projects" class="section projects">
             <div class="project-grid">
-                <div class="project-card">
+                <div class="project-card" data-aos="fade-right" data-aos-duration="1500">
                     <h3>CC9</h3>
                     <p>Big Data</p>
                     <div class="button-group">
@@ -212,7 +218,7 @@
                     <div id="basmatiriceContainer" class="image-container"></div>
                     <p id="basmatiriceText" class="hidden"></p>
                  </div>
-                 <div class="project-card">
+                 <div class="project-card" data-aos="fade-left" data-aos-duration="1500">
                     <h3>CC10</h3>
                     <p>Interactive Visualizations</p>
                     <div class="button-group">
@@ -232,23 +238,33 @@
 
       <!-- Contact me starts here -->
 
-        <section id="contact" class="section contact">
-            <h2>Contact</h2>
-            <p>Feel free to reach out to me on <a href="https://www.linkedin.com/in/adam-zikry-70b257240/">LinkedIn</a> or <a href="https://github.com/adamelzikry13">GitHub</a>.</p>
-            <button id="backToTop" class="back-to-top">Back to Top</button>
-        </section>
+      <section id="contact" class="section contact" data-aos="fade-down" data-aos-duration="1500">
+        <h2>Contact</h2>
+        <p>Feel free to reach out to me:</p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/adam-zikry-70b257240/" target="_blank">
+                <img src="img/linkedin_logo.png" alt="LinkedIn" class="social-icon">
+            </a>
+            <a href="https://github.com/adamelzikry13" target="_blank">
+                <img src="img/github_square.png" alt="GitHub" class="social-icon">
+            </a>
+        </div>
+        <button id="backToTop" class="back-to-top">Back to Top</button>
+    </section>
+    
     </main>
 
     <footer>
-        <p>Your's Truly portfolio</p>
+        <p>© Adam Zikry</p>
     </footer>
 
 
     <!-- Where the Magic Happens -->
 
-    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <script>
+        AOS.init();
+    </script>
+    
 
 
 
@@ -358,7 +374,7 @@ document.querySelectorAll('.navbar a').forEach(link => {
 document.getElementById('backToTop').addEventListener('click', () => {
     window.scrollTo({
         top: 0,
-        behavior: 'smooth' // Smooth scroll animation
+        behavior: 'smooth' 
     });
 });
 
